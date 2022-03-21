@@ -1,0 +1,990 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 55;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		1F85CF247481CEF26213ACFF4059D3A3 /* LazyImage+Loader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73CF123CB66B94522983859B1BA99D14 /* LazyImage+Loader.swift */; };
+		22D338428AD1E7CADEA1BDA5F2EB4B50 /* LazyImage-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 794DACC8BF0B5E1F7BE4747C6D29F823 /* LazyImage-dummy.m */; };
+		250630FAF92D5138EA8330BBDEA81AD5 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 73010CC983E3809BECEE5348DA1BB8C6 /* Foundation.framework */; };
+		29CACC911ADF107CFEEF95D5C502ADFD /* LazyImage+Storage.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE0DC26B5D4A97D984C93FC5BDD52BE4 /* LazyImage+Storage.swift */; };
+		4F554682042E43C4E84463592CB27072 /* Pods-LBGAssignmentTests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 93B5D33D916E6AEF993F55B1D75B184C /* Pods-LBGAssignmentTests-dummy.m */; };
+		58DB919D6DBB7DFF0A1A371200DB26E5 /* Pods-LBGAssignment-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 9DFED74A1B350D194BAF7AADEC9860F2 /* Pods-LBGAssignment-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		6054AA14BBA5848466CA9826D6409724 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 73010CC983E3809BECEE5348DA1BB8C6 /* Foundation.framework */; };
+		748CE3E2E365B18EDF22FA9828EEB040 /* LazyImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79DD97AFAD1CD53E81CBD429D5BFD675 /* LazyImageView.swift */; };
+		77527518F391B4B5E182D449DFAAC10F /* LazyImage-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = BA15879A5C685A73A05D16527737F493 /* LazyImage-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		856BAFEF87ED7EEB01C2FA87E185C34C /* LazyImage+Error.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECD369EAD9A6F725E8187ABE0AE7E50C /* LazyImage+Error.swift */; };
+		896CDA9FEA9732CEA672DF6A3D361E31 /* Pods-LBGAssignment-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 7473005F73B07802969367A74EBB8279 /* Pods-LBGAssignment-dummy.m */; };
+		A684EBA450D5476FE804143905D2B12B /* LazyImage+Resizing.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8FF130CA69C16EA74A6BCFDB05EE586 /* LazyImage+Resizing.swift */; };
+		AC8AD5EF4A4A5E692B61B601E3997924 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 73010CC983E3809BECEE5348DA1BB8C6 /* Foundation.framework */; };
+		B14AD7A3C0D3C2F73B86BF142991C29E /* Pods-LBGAssignment-LBGAssignmentUITests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 81D4D235DCE67D0F6E14DC3E47C53AC3 /* Pods-LBGAssignment-LBGAssignmentUITests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		C379B390BC40D03FF4F2820BF601A420 /* LazyImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = D879C422C235F566270CFDC16DDEBD98 /* LazyImage.swift */; };
+		E6733FDC63B64F518B3D01B3610958DF /* LazyImage+Network.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FDEDF22F49D4261AA3BCF9403A13647 /* LazyImage+Network.swift */; };
+		EF2117F103EF28D19F815A7EA674354F /* Pods-LBGAssignmentTests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 29BD1CF568C28B8A2F8F59324657BBA4 /* Pods-LBGAssignmentTests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		EF8115CD1615B6F279E25F596D52BE82 /* Pods-LBGAssignment-LBGAssignmentUITests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = FCA2D140F55496257217DFB77E183989 /* Pods-LBGAssignment-LBGAssignmentUITests-dummy.m */; };
+		F771F7F4AF53253859A00C8A90E92C1D /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 73010CC983E3809BECEE5348DA1BB8C6 /* Foundation.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		4F0BD965EE1068505871E0E86E4E75DF /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 1F08202287E8E680E3135F5D542DEC5A;
+			remoteInfo = "Pods-LBGAssignment";
+		};
+		71A5A4E57B1654836BFF289D9DDACEB5 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 694DC1ED7D202F62DA6DF98F6A6CEA90;
+			remoteInfo = LazyImage;
+		};
+		FF7AD6C342197FA4BF0549304A1EC5F4 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 694DC1ED7D202F62DA6DF98F6A6CEA90;
+			remoteInfo = LazyImage;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		008BFD2EC618D93E6D6018C50E46FB0D /* Pods-LBGAssignment-LBGAssignmentUITests */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = "Pods-LBGAssignment-LBGAssignmentUITests"; path = Pods_LBGAssignment_LBGAssignmentUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		13FDE6DF41CFBCFE388CD4DAABCC3A93 /* Pods-LBGAssignment-LBGAssignmentUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-LBGAssignment-LBGAssignmentUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		29BD1CF568C28B8A2F8F59324657BBA4 /* Pods-LBGAssignmentTests-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-LBGAssignmentTests-umbrella.h"; sourceTree = "<group>"; };
+		2F24D961E693A40ED78E5C29839F0A47 /* Pods-LBGAssignment */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = "Pods-LBGAssignment"; path = Pods_LBGAssignment.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		595054B1D56C4641D4FA57CCBB9B9EFB /* Pods-LBGAssignment-LBGAssignmentUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-LBGAssignment-LBGAssignmentUITests.release.xcconfig"; sourceTree = "<group>"; };
+		6413818B2695DAB9824AB4C9D1B44F7D /* Pods-LBGAssignment-LBGAssignmentUITests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-LBGAssignment-LBGAssignmentUITests.modulemap"; sourceTree = "<group>"; };
+		6E77C778DC34AF98D93760C7ED3EC30B /* Pods-LBGAssignment-LBGAssignmentUITests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-LBGAssignment-LBGAssignmentUITests-acknowledgements.markdown"; sourceTree = "<group>"; };
+		6FDEDF22F49D4261AA3BCF9403A13647 /* LazyImage+Network.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "LazyImage+Network.swift"; path = "Library/LazyImage+Network.swift"; sourceTree = "<group>"; };
+		73010CC983E3809BECEE5348DA1BB8C6 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS14.0.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
+		73CF123CB66B94522983859B1BA99D14 /* LazyImage+Loader.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "LazyImage+Loader.swift"; path = "Library/LazyImage+Loader.swift"; sourceTree = "<group>"; };
+		7473005F73B07802969367A74EBB8279 /* Pods-LBGAssignment-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-LBGAssignment-dummy.m"; sourceTree = "<group>"; };
+		794DACC8BF0B5E1F7BE4747C6D29F823 /* LazyImage-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "LazyImage-dummy.m"; sourceTree = "<group>"; };
+		79DD97AFAD1CD53E81CBD429D5BFD675 /* LazyImageView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = LazyImageView.swift; path = Library/LazyImageView.swift; sourceTree = "<group>"; };
+		7E5D9EF7B52F9E6A5CC89D701DB640DF /* Pods-LBGAssignmentTests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-LBGAssignmentTests-acknowledgements.plist"; sourceTree = "<group>"; };
+		81D4D235DCE67D0F6E14DC3E47C53AC3 /* Pods-LBGAssignment-LBGAssignmentUITests-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-LBGAssignment-LBGAssignmentUITests-umbrella.h"; sourceTree = "<group>"; };
+		8384EDB3024A0313191F665F9D8A8BBB /* LazyImage.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = LazyImage.release.xcconfig; sourceTree = "<group>"; };
+		88757F5885BFED3F3E9685AF845284BE /* Pods-LBGAssignmentTests-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-LBGAssignmentTests-Info.plist"; sourceTree = "<group>"; };
+		91EA73CA94561DC379844AB62EC13DF2 /* Pods-LBGAssignment.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-LBGAssignment.release.xcconfig"; sourceTree = "<group>"; };
+		93B5D33D916E6AEF993F55B1D75B184C /* Pods-LBGAssignmentTests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-LBGAssignmentTests-dummy.m"; sourceTree = "<group>"; };
+		94604E738B89F39758375E7AD3FC01C8 /* Pods-LBGAssignmentTests */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = "Pods-LBGAssignmentTests"; path = Pods_LBGAssignmentTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		955545B4C7806E8E8A452AA04D335277 /* Pods-LBGAssignment-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-LBGAssignment-acknowledgements.plist"; sourceTree = "<group>"; };
+		9818EDFCB7F59694ACDB3E7CD615A44C /* Pods-LBGAssignmentTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-LBGAssignmentTests.debug.xcconfig"; sourceTree = "<group>"; };
+		9840FB1C1CD4A1DC7DE5BCFC7F56E761 /* LazyImage.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = LazyImage.modulemap; sourceTree = "<group>"; };
+		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		9DFED74A1B350D194BAF7AADEC9860F2 /* Pods-LBGAssignment-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-LBGAssignment-umbrella.h"; sourceTree = "<group>"; };
+		A0B12F1F54513FE5E203C2F9B7F2F2DF /* LazyImage-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "LazyImage-prefix.pch"; sourceTree = "<group>"; };
+		A0CF3791C0E84DB2F6C05FF594E72AD7 /* Pods-LBGAssignment-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-LBGAssignment-frameworks.sh"; sourceTree = "<group>"; };
+		B03CB5BE3B100E6F9C764C5505EBA8DF /* Pods-LBGAssignment-LBGAssignmentUITests-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-LBGAssignment-LBGAssignmentUITests-Info.plist"; sourceTree = "<group>"; };
+		B5A84C90F8ED8B18D85BABE74E7B6403 /* Pods-LBGAssignment-LBGAssignmentUITests-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-LBGAssignment-LBGAssignmentUITests-frameworks.sh"; sourceTree = "<group>"; };
+		BA15879A5C685A73A05D16527737F493 /* LazyImage-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "LazyImage-umbrella.h"; sourceTree = "<group>"; };
+		C673A3D0ADD87B3D5E14704A17E7D206 /* Pods-LBGAssignment-LBGAssignmentUITests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-LBGAssignment-LBGAssignmentUITests-acknowledgements.plist"; sourceTree = "<group>"; };
+		D0DBDBA9569FAA88EA253E83D1340319 /* Pods-LBGAssignmentTests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-LBGAssignmentTests-acknowledgements.markdown"; sourceTree = "<group>"; };
+		D879C422C235F566270CFDC16DDEBD98 /* LazyImage.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = LazyImage.swift; path = Library/LazyImage.swift; sourceTree = "<group>"; };
+		DBE09E990E89E7D7A730AE33FCC7E3A6 /* LazyImage.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = LazyImage.debug.xcconfig; sourceTree = "<group>"; };
+		E3568366F452CC55FCDEA01CDD82AD00 /* Pods-LBGAssignment-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-LBGAssignment-acknowledgements.markdown"; sourceTree = "<group>"; };
+		EA14327DE022291896C887290FC313C3 /* Pods-LBGAssignmentTests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-LBGAssignmentTests.modulemap"; sourceTree = "<group>"; };
+		ECD369EAD9A6F725E8187ABE0AE7E50C /* LazyImage+Error.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "LazyImage+Error.swift"; path = "Library/LazyImage+Error.swift"; sourceTree = "<group>"; };
+		F3215E01F758C78421D5FA80C6A07C79 /* Pods-LBGAssignment-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-LBGAssignment-Info.plist"; sourceTree = "<group>"; };
+		F376EE195B2E96BC146830300C479A44 /* Pods-LBGAssignment.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-LBGAssignment.modulemap"; sourceTree = "<group>"; };
+		F563263EEA2995B1797C3EA38E91E0DB /* LazyImage */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = LazyImage; path = LazyImage.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		F8FF130CA69C16EA74A6BCFDB05EE586 /* LazyImage+Resizing.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "LazyImage+Resizing.swift"; path = "Library/LazyImage+Resizing.swift"; sourceTree = "<group>"; };
+		FCA2D140F55496257217DFB77E183989 /* Pods-LBGAssignment-LBGAssignmentUITests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-LBGAssignment-LBGAssignmentUITests-dummy.m"; sourceTree = "<group>"; };
+		FE0DC26B5D4A97D984C93FC5BDD52BE4 /* LazyImage+Storage.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "LazyImage+Storage.swift"; path = "Library/LazyImage+Storage.swift"; sourceTree = "<group>"; };
+		FE4843001F9E946DBE173CA6E82C5FF9 /* Pods-LBGAssignment.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-LBGAssignment.debug.xcconfig"; sourceTree = "<group>"; };
+		FF1E8D73D108567BBFCB864334492D68 /* Pods-LBGAssignmentTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-LBGAssignmentTests.release.xcconfig"; sourceTree = "<group>"; };
+		FFC672421667A407D42ECF342CD895FF /* LazyImage-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "LazyImage-Info.plist"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		159DC3A2042EE9005A634A51EECEDA85 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6054AA14BBA5848466CA9826D6409724 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		22FE97F8B143E8EC066D8DC10102835A /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AC8AD5EF4A4A5E692B61B601E3997924 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		50239159724B2E874D2CCAC0A31E03C3 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F771F7F4AF53253859A00C8A90E92C1D /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		61C309332795F8DBFB2C7B26BF2A6AD9 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				250630FAF92D5138EA8330BBDEA81AD5 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		0ED9630E8243C539F12AEA4EBD72A5D9 /* Targets Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				D059143D966D70A87E3EE24F5A342F37 /* Pods-LBGAssignment */,
+				0FE3FC445D6C417376A9D1395CF015E3 /* Pods-LBGAssignment-LBGAssignmentUITests */,
+				DAA5E0FD981AEA6833538CDE5FC20D08 /* Pods-LBGAssignmentTests */,
+			);
+			name = "Targets Support Files";
+			sourceTree = "<group>";
+		};
+		0FE3FC445D6C417376A9D1395CF015E3 /* Pods-LBGAssignment-LBGAssignmentUITests */ = {
+			isa = PBXGroup;
+			children = (
+				6413818B2695DAB9824AB4C9D1B44F7D /* Pods-LBGAssignment-LBGAssignmentUITests.modulemap */,
+				6E77C778DC34AF98D93760C7ED3EC30B /* Pods-LBGAssignment-LBGAssignmentUITests-acknowledgements.markdown */,
+				C673A3D0ADD87B3D5E14704A17E7D206 /* Pods-LBGAssignment-LBGAssignmentUITests-acknowledgements.plist */,
+				FCA2D140F55496257217DFB77E183989 /* Pods-LBGAssignment-LBGAssignmentUITests-dummy.m */,
+				B5A84C90F8ED8B18D85BABE74E7B6403 /* Pods-LBGAssignment-LBGAssignmentUITests-frameworks.sh */,
+				B03CB5BE3B100E6F9C764C5505EBA8DF /* Pods-LBGAssignment-LBGAssignmentUITests-Info.plist */,
+				81D4D235DCE67D0F6E14DC3E47C53AC3 /* Pods-LBGAssignment-LBGAssignmentUITests-umbrella.h */,
+				13FDE6DF41CFBCFE388CD4DAABCC3A93 /* Pods-LBGAssignment-LBGAssignmentUITests.debug.xcconfig */,
+				595054B1D56C4641D4FA57CCBB9B9EFB /* Pods-LBGAssignment-LBGAssignmentUITests.release.xcconfig */,
+			);
+			name = "Pods-LBGAssignment-LBGAssignmentUITests";
+			path = "Target Support Files/Pods-LBGAssignment-LBGAssignmentUITests";
+			sourceTree = "<group>";
+		};
+		2EAC4D42342B64C4C758DE1C28B5B54B /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				3BD504B1F572FEA1F94E4C8E45060584 /* LazyImage */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		3BD504B1F572FEA1F94E4C8E45060584 /* LazyImage */ = {
+			isa = PBXGroup;
+			children = (
+				D879C422C235F566270CFDC16DDEBD98 /* LazyImage.swift */,
+				ECD369EAD9A6F725E8187ABE0AE7E50C /* LazyImage+Error.swift */,
+				73CF123CB66B94522983859B1BA99D14 /* LazyImage+Loader.swift */,
+				6FDEDF22F49D4261AA3BCF9403A13647 /* LazyImage+Network.swift */,
+				F8FF130CA69C16EA74A6BCFDB05EE586 /* LazyImage+Resizing.swift */,
+				FE0DC26B5D4A97D984C93FC5BDD52BE4 /* LazyImage+Storage.swift */,
+				79DD97AFAD1CD53E81CBD429D5BFD675 /* LazyImageView.swift */,
+				D04C8CE87908773CB0248A18B3EBCD60 /* Support Files */,
+			);
+			name = LazyImage;
+			path = LazyImage;
+			sourceTree = "<group>";
+		};
+		578452D2E740E91742655AC8F1636D1F /* iOS */ = {
+			isa = PBXGroup;
+			children = (
+				73010CC983E3809BECEE5348DA1BB8C6 /* Foundation.framework */,
+			);
+			name = iOS;
+			sourceTree = "<group>";
+		};
+		635CFB0917E85E9472C45F7DEB95494A /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				F563263EEA2995B1797C3EA38E91E0DB /* LazyImage */,
+				2F24D961E693A40ED78E5C29839F0A47 /* Pods-LBGAssignment */,
+				008BFD2EC618D93E6D6018C50E46FB0D /* Pods-LBGAssignment-LBGAssignmentUITests */,
+				94604E738B89F39758375E7AD3FC01C8 /* Pods-LBGAssignmentTests */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		CF1408CF629C7361332E53B88F7BD30C = {
+			isa = PBXGroup;
+			children = (
+				9D940727FF8FB9C785EB98E56350EF41 /* Podfile */,
+				D210D550F4EA176C3123ED886F8F87F5 /* Frameworks */,
+				2EAC4D42342B64C4C758DE1C28B5B54B /* Pods */,
+				635CFB0917E85E9472C45F7DEB95494A /* Products */,
+				0ED9630E8243C539F12AEA4EBD72A5D9 /* Targets Support Files */,
+			);
+			sourceTree = "<group>";
+		};
+		D04C8CE87908773CB0248A18B3EBCD60 /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				9840FB1C1CD4A1DC7DE5BCFC7F56E761 /* LazyImage.modulemap */,
+				794DACC8BF0B5E1F7BE4747C6D29F823 /* LazyImage-dummy.m */,
+				FFC672421667A407D42ECF342CD895FF /* LazyImage-Info.plist */,
+				A0B12F1F54513FE5E203C2F9B7F2F2DF /* LazyImage-prefix.pch */,
+				BA15879A5C685A73A05D16527737F493 /* LazyImage-umbrella.h */,
+				DBE09E990E89E7D7A730AE33FCC7E3A6 /* LazyImage.debug.xcconfig */,
+				8384EDB3024A0313191F665F9D8A8BBB /* LazyImage.release.xcconfig */,
+			);
+			name = "Support Files";
+			path = "../Target Support Files/LazyImage";
+			sourceTree = "<group>";
+		};
+		D059143D966D70A87E3EE24F5A342F37 /* Pods-LBGAssignment */ = {
+			isa = PBXGroup;
+			children = (
+				F376EE195B2E96BC146830300C479A44 /* Pods-LBGAssignment.modulemap */,
+				E3568366F452CC55FCDEA01CDD82AD00 /* Pods-LBGAssignment-acknowledgements.markdown */,
+				955545B4C7806E8E8A452AA04D335277 /* Pods-LBGAssignment-acknowledgements.plist */,
+				7473005F73B07802969367A74EBB8279 /* Pods-LBGAssignment-dummy.m */,
+				A0CF3791C0E84DB2F6C05FF594E72AD7 /* Pods-LBGAssignment-frameworks.sh */,
+				F3215E01F758C78421D5FA80C6A07C79 /* Pods-LBGAssignment-Info.plist */,
+				9DFED74A1B350D194BAF7AADEC9860F2 /* Pods-LBGAssignment-umbrella.h */,
+				FE4843001F9E946DBE173CA6E82C5FF9 /* Pods-LBGAssignment.debug.xcconfig */,
+				91EA73CA94561DC379844AB62EC13DF2 /* Pods-LBGAssignment.release.xcconfig */,
+			);
+			name = "Pods-LBGAssignment";
+			path = "Target Support Files/Pods-LBGAssignment";
+			sourceTree = "<group>";
+		};
+		D210D550F4EA176C3123ED886F8F87F5 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				578452D2E740E91742655AC8F1636D1F /* iOS */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		DAA5E0FD981AEA6833538CDE5FC20D08 /* Pods-LBGAssignmentTests */ = {
+			isa = PBXGroup;
+			children = (
+				EA14327DE022291896C887290FC313C3 /* Pods-LBGAssignmentTests.modulemap */,
+				D0DBDBA9569FAA88EA253E83D1340319 /* Pods-LBGAssignmentTests-acknowledgements.markdown */,
+				7E5D9EF7B52F9E6A5CC89D701DB640DF /* Pods-LBGAssignmentTests-acknowledgements.plist */,
+				93B5D33D916E6AEF993F55B1D75B184C /* Pods-LBGAssignmentTests-dummy.m */,
+				88757F5885BFED3F3E9685AF845284BE /* Pods-LBGAssignmentTests-Info.plist */,
+				29BD1CF568C28B8A2F8F59324657BBA4 /* Pods-LBGAssignmentTests-umbrella.h */,
+				9818EDFCB7F59694ACDB3E7CD615A44C /* Pods-LBGAssignmentTests.debug.xcconfig */,
+				FF1E8D73D108567BBFCB864334492D68 /* Pods-LBGAssignmentTests.release.xcconfig */,
+			);
+			name = "Pods-LBGAssignmentTests";
+			path = "Target Support Files/Pods-LBGAssignmentTests";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		05AE56794F1F43C9D0B3E7227454926D /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B14AD7A3C0D3C2F73B86BF142991C29E /* Pods-LBGAssignment-LBGAssignmentUITests-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		086EF52E5DDEBE96B82AFD5114DD70AF /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				58DB919D6DBB7DFF0A1A371200DB26E5 /* Pods-LBGAssignment-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5888ACFF643C99EBC6B99D9AEFA0987E /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EF2117F103EF28D19F815A7EA674354F /* Pods-LBGAssignmentTests-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		76AE92B1215EB9F2EF29F472C757CF2C /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				77527518F391B4B5E182D449DFAAC10F /* LazyImage-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		1F08202287E8E680E3135F5D542DEC5A /* Pods-LBGAssignment */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = FC3B4FFD43EB23E63EC9B1A2C49FC722 /* Build configuration list for PBXNativeTarget "Pods-LBGAssignment" */;
+			buildPhases = (
+				086EF52E5DDEBE96B82AFD5114DD70AF /* Headers */,
+				7D1873C4E2DA39478312B7BDC821D2A0 /* Sources */,
+				159DC3A2042EE9005A634A51EECEDA85 /* Frameworks */,
+				F969B4276318323ED0D7B463F6AA3C05 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				FAF02285B7092A28A8DC1B092826C368 /* PBXTargetDependency */,
+			);
+			name = "Pods-LBGAssignment";
+			productName = Pods_LBGAssignment;
+			productReference = 2F24D961E693A40ED78E5C29839F0A47 /* Pods-LBGAssignment */;
+			productType = "com.apple.product-type.framework";
+		};
+		57B9A7BF9CF1A7678BB8BC80857F833F /* Pods-LBGAssignmentTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 70BEC668B3CD2CC47450129006A461D6 /* Build configuration list for PBXNativeTarget "Pods-LBGAssignmentTests" */;
+			buildPhases = (
+				5888ACFF643C99EBC6B99D9AEFA0987E /* Headers */,
+				46A28E83057A379766870C0BF35B5F06 /* Sources */,
+				50239159724B2E874D2CCAC0A31E03C3 /* Frameworks */,
+				46B44BF5C1432943A9B348A45A963BE3 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				DB759EFFEC1A1D5F46E872E328E6587F /* PBXTargetDependency */,
+			);
+			name = "Pods-LBGAssignmentTests";
+			productName = Pods_LBGAssignmentTests;
+			productReference = 94604E738B89F39758375E7AD3FC01C8 /* Pods-LBGAssignmentTests */;
+			productType = "com.apple.product-type.framework";
+		};
+		694DC1ED7D202F62DA6DF98F6A6CEA90 /* LazyImage */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = E2264EAF2281FFB82A23564CC2D183D2 /* Build configuration list for PBXNativeTarget "LazyImage" */;
+			buildPhases = (
+				76AE92B1215EB9F2EF29F472C757CF2C /* Headers */,
+				C6F5C5D94E9C097A4EF8F2DC7657D8E1 /* Sources */,
+				61C309332795F8DBFB2C7B26BF2A6AD9 /* Frameworks */,
+				D0EF1375C8AE97D61F908459A96A338A /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = LazyImage;
+			productName = LazyImage;
+			productReference = F563263EEA2995B1797C3EA38E91E0DB /* LazyImage */;
+			productType = "com.apple.product-type.framework";
+		};
+		7076A718C43E37580E6A97A23B26C2EF /* Pods-LBGAssignment-LBGAssignmentUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 85EA5408EE41C8A565754432A477A9E2 /* Build configuration list for PBXNativeTarget "Pods-LBGAssignment-LBGAssignmentUITests" */;
+			buildPhases = (
+				05AE56794F1F43C9D0B3E7227454926D /* Headers */,
+				1329C5DB0316AB0AB2B09B10D93BB966 /* Sources */,
+				22FE97F8B143E8EC066D8DC10102835A /* Frameworks */,
+				2E623B458C889011E8E3510CF0908C20 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				228368AD185393B360F7958BBA17032C /* PBXTargetDependency */,
+			);
+			name = "Pods-LBGAssignment-LBGAssignmentUITests";
+			productName = Pods_LBGAssignment_LBGAssignmentUITests;
+			productReference = 008BFD2EC618D93E6D6018C50E46FB0D /* Pods-LBGAssignment-LBGAssignmentUITests */;
+			productType = "com.apple.product-type.framework";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		BFDFE7DC352907FC980B868725387E98 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1240;
+				LastUpgradeCheck = 1240;
+			};
+			buildConfigurationList = 4821239608C13582E20E6DA73FD5F1F9 /* Build configuration list for PBXProject "Pods" */;
+			compatibilityVersion = "Xcode 13.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				Base,
+				en,
+			);
+			mainGroup = CF1408CF629C7361332E53B88F7BD30C;
+			productRefGroup = 635CFB0917E85E9472C45F7DEB95494A /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				694DC1ED7D202F62DA6DF98F6A6CEA90 /* LazyImage */,
+				1F08202287E8E680E3135F5D542DEC5A /* Pods-LBGAssignment */,
+				7076A718C43E37580E6A97A23B26C2EF /* Pods-LBGAssignment-LBGAssignmentUITests */,
+				57B9A7BF9CF1A7678BB8BC80857F833F /* Pods-LBGAssignmentTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		2E623B458C889011E8E3510CF0908C20 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		46B44BF5C1432943A9B348A45A963BE3 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D0EF1375C8AE97D61F908459A96A338A /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F969B4276318323ED0D7B463F6AA3C05 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		1329C5DB0316AB0AB2B09B10D93BB966 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EF8115CD1615B6F279E25F596D52BE82 /* Pods-LBGAssignment-LBGAssignmentUITests-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		46A28E83057A379766870C0BF35B5F06 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4F554682042E43C4E84463592CB27072 /* Pods-LBGAssignmentTests-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7D1873C4E2DA39478312B7BDC821D2A0 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				896CDA9FEA9732CEA672DF6A3D361E31 /* Pods-LBGAssignment-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C6F5C5D94E9C097A4EF8F2DC7657D8E1 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C379B390BC40D03FF4F2820BF601A420 /* LazyImage.swift in Sources */,
+				856BAFEF87ED7EEB01C2FA87E185C34C /* LazyImage+Error.swift in Sources */,
+				1F85CF247481CEF26213ACFF4059D3A3 /* LazyImage+Loader.swift in Sources */,
+				E6733FDC63B64F518B3D01B3610958DF /* LazyImage+Network.swift in Sources */,
+				A684EBA450D5476FE804143905D2B12B /* LazyImage+Resizing.swift in Sources */,
+				29CACC911ADF107CFEEF95D5C502ADFD /* LazyImage+Storage.swift in Sources */,
+				22D338428AD1E7CADEA1BDA5F2EB4B50 /* LazyImage-dummy.m in Sources */,
+				748CE3E2E365B18EDF22FA9828EEB040 /* LazyImageView.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		228368AD185393B360F7958BBA17032C /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = LazyImage;
+			target = 694DC1ED7D202F62DA6DF98F6A6CEA90 /* LazyImage */;
+			targetProxy = FF7AD6C342197FA4BF0549304A1EC5F4 /* PBXContainerItemProxy */;
+		};
+		DB759EFFEC1A1D5F46E872E328E6587F /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = "Pods-LBGAssignment";
+			target = 1F08202287E8E680E3135F5D542DEC5A /* Pods-LBGAssignment */;
+			targetProxy = 4F0BD965EE1068505871E0E86E4E75DF /* PBXContainerItemProxy */;
+		};
+		FAF02285B7092A28A8DC1B092826C368 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = LazyImage;
+			target = 694DC1ED7D202F62DA6DF98F6A6CEA90 /* LazyImage */;
+			targetProxy = 71A5A4E57B1654836BFF289D9DDACEB5 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		2B84B851809E0E31E61531160D71A7D2 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = FE4843001F9E946DBE173CA6E82C5FF9 /* Pods-LBGAssignment.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-LBGAssignment/Pods-LBGAssignment-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.4;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-LBGAssignment/Pods-LBGAssignment.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		314AC9E522671DB0C6867EA985A9D2E0 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 595054B1D56C4641D4FA57CCBB9B9EFB /* Pods-LBGAssignment-LBGAssignmentUITests.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-LBGAssignment-LBGAssignmentUITests/Pods-LBGAssignment-LBGAssignmentUITests-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.4;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-LBGAssignment-LBGAssignmentUITests/Pods-LBGAssignment-LBGAssignmentUITests.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		92486E5E72E54FAF60E1A7D022C21B10 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"POD_CONFIGURATION_RELEASE=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.4;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				STRIP_INSTALLED_PRODUCT = NO;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_VERSION = 5.0;
+				SYMROOT = "${SRCROOT}/../build";
+			};
+			name = Release;
+		};
+		934ED2B84836A780113D1F63484628B2 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"POD_CONFIGURATION_DEBUG=1",
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.4;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				STRIP_INSTALLED_PRODUCT = NO;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
+				SYMROOT = "${SRCROOT}/../build";
+			};
+			name = Debug;
+		};
+		C4AB11B05DD9144A7ED3EB3D3694C756 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 9818EDFCB7F59694ACDB3E7CD615A44C /* Pods-LBGAssignmentTests.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-LBGAssignmentTests/Pods-LBGAssignmentTests-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.4;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-LBGAssignmentTests/Pods-LBGAssignmentTests.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		D6AB4DDF7F31BCD63D94B690E88903DD /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 91EA73CA94561DC379844AB62EC13DF2 /* Pods-LBGAssignment.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-LBGAssignment/Pods-LBGAssignment-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.4;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-LBGAssignment/Pods-LBGAssignment.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		D9D40CF3C1AF3ACA1378A944CBA2C72A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = DBE09E990E89E7D7A730AE33FCC7E3A6 /* LazyImage.debug.xcconfig */;
+			buildSettings = {
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/LazyImage/LazyImage-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/LazyImage/LazyImage-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MODULEMAP_FILE = "Target Support Files/LazyImage/LazyImage.modulemap";
+				PRODUCT_MODULE_NAME = LazyImage;
+				PRODUCT_NAME = LazyImage;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		F6A7E060DF4BB5C8C3FE468166131713 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 13FDE6DF41CFBCFE388CD4DAABCC3A93 /* Pods-LBGAssignment-LBGAssignmentUITests.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-LBGAssignment-LBGAssignmentUITests/Pods-LBGAssignment-LBGAssignmentUITests-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.4;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-LBGAssignment-LBGAssignmentUITests/Pods-LBGAssignment-LBGAssignmentUITests.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		FB806C87AF088798B6A52647C6CAF2BF /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 8384EDB3024A0313191F665F9D8A8BBB /* LazyImage.release.xcconfig */;
+			buildSettings = {
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/LazyImage/LazyImage-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/LazyImage/LazyImage-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MODULEMAP_FILE = "Target Support Files/LazyImage/LazyImage.modulemap";
+				PRODUCT_MODULE_NAME = LazyImage;
+				PRODUCT_NAME = LazyImage;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		FFF5D2144F9B708FB4132847FF519C2D /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = FF1E8D73D108567BBFCB864334492D68 /* Pods-LBGAssignmentTests.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-LBGAssignmentTests/Pods-LBGAssignmentTests-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.4;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-LBGAssignmentTests/Pods-LBGAssignmentTests.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		4821239608C13582E20E6DA73FD5F1F9 /* Build configuration list for PBXProject "Pods" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				934ED2B84836A780113D1F63484628B2 /* Debug */,
+				92486E5E72E54FAF60E1A7D022C21B10 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		70BEC668B3CD2CC47450129006A461D6 /* Build configuration list for PBXNativeTarget "Pods-LBGAssignmentTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C4AB11B05DD9144A7ED3EB3D3694C756 /* Debug */,
+				FFF5D2144F9B708FB4132847FF519C2D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		85EA5408EE41C8A565754432A477A9E2 /* Build configuration list for PBXNativeTarget "Pods-LBGAssignment-LBGAssignmentUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F6A7E060DF4BB5C8C3FE468166131713 /* Debug */,
+				314AC9E522671DB0C6867EA985A9D2E0 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		E2264EAF2281FFB82A23564CC2D183D2 /* Build configuration list for PBXNativeTarget "LazyImage" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D9D40CF3C1AF3ACA1378A944CBA2C72A /* Debug */,
+				FB806C87AF088798B6A52647C6CAF2BF /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		FC3B4FFD43EB23E63EC9B1A2C49FC722 /* Build configuration list for PBXNativeTarget "Pods-LBGAssignment" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2B84B851809E0E31E61531160D71A7D2 /* Debug */,
+				D6AB4DDF7F31BCD63D94B690E88903DD /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = BFDFE7DC352907FC980B868725387E98 /* Project object */;
+}

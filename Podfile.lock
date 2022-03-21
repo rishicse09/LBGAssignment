@@ -1,0 +1,16 @@
+PODS:
+  - LazyImage (7.0.1)
+
+DEPENDENCIES:
+  - LazyImage
+
+SPEC REPOS:
+  trunk:
+    - LazyImage
+
+SPEC CHECKSUMS:
+  LazyImage: 4db5288d8660b28e64e60c57f5b5d414af922160
+
+PODFILE CHECKSUM: 5fd5a8a59346077be7165bda05529c42080548ac
+
+COCOAPODS: 1.11.3

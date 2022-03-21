@@ -1,0 +1,6 @@
+framework module Pods_LBGAssignment {
+  umbrella header "Pods-LBGAssignment-umbrella.h"
+
+  export *
+  module * { export * }
+}
