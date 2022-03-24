@@ -9,13 +9,10 @@ import Foundation
 struct ConnectionManager {
 
     static let shared = ConnectionManager()
-    private init () {}
-
     static func hasConnectivity() -> Bool {
         do {
             let reachability: Reachability = try Reachability()
             let networkStatus = reachability.connection
-            
             switch networkStatus {
             case .unavailable:
                 return false

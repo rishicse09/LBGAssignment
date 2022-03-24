@@ -9,9 +9,5 @@ import Foundation
 struct MovieResponseModel: Decodable {
     
     var results = [MoviesModel]()
-    
-    init(results: [MoviesModel]) {
-        self.results = results
-    }
-    
+
 }

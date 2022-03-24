@@ -168,12 +168,9 @@
 				210ECD6F27E4FE4C00C0F799 /* Model */,
 				210ECD6E27E4FE4600C0F799 /* View */,
 				210ECD6D27E4FE3C00C0F799 /* ViewModel */,
-				210ECD3A27E340A300C0F799 /* AppDelegate.swift */,
-				210ECD3C27E340A300C0F799 /* SceneDelegate.swift */,
-				210ECD3E27E340A300C0F799 /* HomeViewController.swift */,
-				210ECD4027E340A300C0F799 /* Main.storyboard */,
+				217E854C27EB320F0035D68F /* AppDelegate */,
+				217E854B27EB2BD10035D68F /* StoryBoards */,
 				210ECD4327E340A400C0F799 /* Assets.xcassets */,
-				210ECD4527E340A400C0F799 /* LaunchScreen.storyboard */,
 				210ECD4827E340A400C0F799 /* Info.plist */,
 			);
 			path = LBGAssignment;
@@ -207,6 +204,7 @@
 		210ECD6E27E4FE4600C0F799 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				210ECD3E27E340A300C0F799 /* HomeViewController.swift */,
 				210ECD8127E65E7B00C0F799 /* HomeViewControllerMoviesDelegateExtension.swift */,
 				210ECD8327E65E9A00C0F799 /* HomeViewControllerTableViewExtension.swift */,
 				210ECD8527E6702B00C0F799 /* MoviesTableViewCell.swift */,
@@ -259,6 +257,24 @@
 				217E854927E904000035D68F /* AlertHandler.swift */,
 			);
 			path = AlertHandler;
+			sourceTree = "<group>";
+		};
+		217E854B27EB2BD10035D68F /* StoryBoards */ = {
+			isa = PBXGroup;
+			children = (
+				210ECD4027E340A300C0F799 /* Main.storyboard */,
+				210ECD4527E340A400C0F799 /* LaunchScreen.storyboard */,
+			);
+			path = StoryBoards;
+			sourceTree = "<group>";
+		};
+		217E854C27EB320F0035D68F /* AppDelegate */ = {
+			isa = PBXGroup;
+			children = (
+				210ECD3A27E340A300C0F799 /* AppDelegate.swift */,
+				210ECD3C27E340A300C0F799 /* SceneDelegate.swift */,
+			);
+			path = AppDelegate;
 			sourceTree = "<group>";
 		};
 		91389D492B845CFE43D9A101 /* Frameworks */ = {

@@ -8,6 +8,7 @@
 import Foundation
 import UIKit
 
+fileprivate let MOVIES_CELL_IDENTIFIER = "moviesTableViewCell"
 extension HomeViewController:UITableViewDelegate, UITableViewDataSource {
     
     //MARK: - UI Components Define
@@ -19,18 +20,18 @@ extension HomeViewController:UITableViewDelegate, UITableViewDataSource {
         addRefreshControl()
     }
     
-    func registerNibs(){
+    fileprivate func registerNibs(){
         let moviesCellNib = UINib(nibName: "MoviesTableViewCell", bundle:nil)
         moviesTableView!.register(moviesCellNib, forCellReuseIdentifier: MOVIES_CELL_IDENTIFIER)
     }
     
-    func addRefreshControl()  {
+    fileprivate func addRefreshControl()  {
         refreshControl.attributedTitle = NSAttributedString(string: "Pull to refresh")
-          refreshControl.addTarget(self, action: #selector(refresh), for: .valueChanged)
-          moviesTableView.addSubview(refreshControl)
+        refreshControl.addTarget(self, action: #selector(refresh), for: .valueChanged)
+        moviesTableView.addSubview(refreshControl)
     }
     
-    @objc func refresh()
+    @objc fileprivate func refresh()
     {
         if isRefreshing {
             refreshControl.endRefreshing()
@@ -40,9 +41,6 @@ extension HomeViewController:UITableViewDelegate, UITableViewDataSource {
         fetchMovieList()
         refreshControl.endRefreshing()
     }
-    
-
-    
     
     //MARK: - UITableViewDelegate
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -55,16 +53,13 @@ extension HomeViewController:UITableViewDelegate, UITableViewDataSource {
     }
     
     //MARK: - Custom UI Creation
-    func createMoviesCell (_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell{
+    fileprivate func createMoviesCell (_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell{
         let cell: MoviesTableViewCell = tableView.dequeueReusableCell(withIdentifier: MOVIES_CELL_IDENTIFIER, for: indexPath) as! MoviesTableViewCell
-        
         let movieData = arrMovies[indexPath.row]
-        
         cell.lblTrackName.text = "\(Constants.MovieCellTitles.TRACK_NAME) \(movieData.trackName)"
         cell.lblArtistName.text = "\(Constants.MovieCellTitles.ARTIST_NAME) \(movieData.artistName)"
         cell.lblGenre.text = "\(Constants.MovieCellTitles.GENRE) \(movieData.primaryGenreName)"
         cell.trackImage.imageURL = movieData.thumbnailURL
-        
         return cell
     }
 }
