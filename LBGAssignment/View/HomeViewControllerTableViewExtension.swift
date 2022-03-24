@@ -12,7 +12,7 @@ fileprivate let MOVIES_CELL_IDENTIFIER = "moviesTableViewCell"
 extension HomeViewController:UITableViewDelegate, UITableViewDataSource {
     
     //MARK: - UI Components Define
-    func initialiseTableViewComponents(){
+    func initialiseTableViewComponents() {
         moviesTableView.estimatedRowHeight = 60.0
         moviesTableView.rowHeight = UITableView.automaticDimension
         moviesTableView.tableFooterView = UIView(frame: .zero)
@@ -20,19 +20,18 @@ extension HomeViewController:UITableViewDelegate, UITableViewDataSource {
         addRefreshControl()
     }
     
-    fileprivate func registerNibs(){
+    fileprivate func registerNibs() {
         let moviesCellNib = UINib(nibName: "MoviesTableViewCell", bundle:nil)
         moviesTableView!.register(moviesCellNib, forCellReuseIdentifier: MOVIES_CELL_IDENTIFIER)
     }
     
-    fileprivate func addRefreshControl()  {
+    fileprivate func addRefreshControl() {
         refreshControl.attributedTitle = NSAttributedString(string: "Pull to refresh")
-        refreshControl.addTarget(self, action: #selector(refresh), for: .valueChanged)
+        refreshControl.addTarget(self, action: #selector(refreshMovieListData), for: .valueChanged)
         moviesTableView.addSubview(refreshControl)
     }
     
-    @objc fileprivate func refresh()
-    {
+    @objc fileprivate func refreshMovieListData() {
         if isRefreshing {
             refreshControl.endRefreshing()
             return
@@ -48,7 +47,6 @@ extension HomeViewController:UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        
         return createMoviesCell(tableView, cellForRowAt: indexPath)
     }
     

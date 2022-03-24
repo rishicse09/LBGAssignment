@@ -17,10 +17,10 @@ struct MoviesViewModel {
     func getMovieList() {
         let serviceRequest = ServiceRequestor()
         serviceRequest.getMoviesList { movies, error in
-                debugPrint("Got data")
-                DispatchQueue.main.async {
-                    delegate?.didReceiveMoviesData(movies: movies, error: error)
-                }
+            debugPrint("Got data")
+            DispatchQueue.main.async {
+                delegate?.didReceiveMoviesData(movies: movies, error: error)
+            }
         }
     }
     

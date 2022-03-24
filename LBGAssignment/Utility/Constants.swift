@@ -16,7 +16,6 @@ struct Constants {
         static let TRACK_NAME = "Track Name:"
         static let ARTIST_NAME = "Artist Name:"
         static let GENRE = "Genre:"
-        
     }
     
     struct AlertStrings{

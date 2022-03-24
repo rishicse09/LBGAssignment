@@ -30,8 +30,9 @@
 		217E853E27E8E9A50035D68F /* ConnectionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 217E853D27E8E9A50035D68F /* ConnectionManager.swift */; };
 		217E854027E8E9FD0035D68F /* Reachability.swift in Sources */ = {isa = PBXBuildFile; fileRef = 217E853F27E8E9FD0035D68F /* Reachability.swift */; };
 		217E854427E8F1600035D68F /* CustomError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 217E854327E8F1600035D68F /* CustomError.swift */; };
-		217E854727E9038F0035D68F /* ErrorHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 217E854627E9038F0035D68F /* ErrorHandler.swift */; };
 		217E854A27E904000035D68F /* AlertHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 217E854927E904000035D68F /* AlertHandler.swift */; };
+		217E855027EC83A10035D68F /* UnitTestUtilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 217E854F27EC83A10035D68F /* UnitTestUtilities.swift */; };
+		217E855127EC83A10035D68F /* UnitTestUtilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 217E854F27EC83A10035D68F /* UnitTestUtilities.swift */; };
 		21FC5091AEF21BF46B4164FC /* Pods_LBGAssignment_LBGAssignmentUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 15C7BA1F450E70CCE8D9AF8F /* Pods_LBGAssignment_LBGAssignmentUITests.framework */; };
 		AD719944576D06D050565CE0 /* Pods_LBGAssignmentTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D81F1B06BE606B9D652564B /* Pods_LBGAssignmentTests.framework */; };
 		FC6B0DF328B66878C62A8DEE /* Pods_LBGAssignment.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2249124BB312967ED9DA2D3F /* Pods_LBGAssignment.framework */; };
@@ -84,8 +85,8 @@
 		217E853D27E8E9A50035D68F /* ConnectionManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConnectionManager.swift; sourceTree = "<group>"; };
 		217E853F27E8E9FD0035D68F /* Reachability.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Reachability.swift; sourceTree = "<group>"; };
 		217E854327E8F1600035D68F /* CustomError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomError.swift; sourceTree = "<group>"; };
-		217E854627E9038F0035D68F /* ErrorHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorHandler.swift; sourceTree = "<group>"; };
 		217E854927E904000035D68F /* AlertHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertHandler.swift; sourceTree = "<group>"; };
+		217E854F27EC83A10035D68F /* UnitTestUtilities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnitTestUtilities.swift; sourceTree = "<group>"; };
 		2249124BB312967ED9DA2D3F /* Pods_LBGAssignment.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_LBGAssignment.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		3072F1302B36A1FFB47980FF /* Pods-LBGAssignment.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LBGAssignment.release.xcconfig"; path = "Target Support Files/Pods-LBGAssignment/Pods-LBGAssignment.release.xcconfig"; sourceTree = "<group>"; };
 		4838D82D3AA56E33E2D68B8D /* Pods-LBGAssignmentTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LBGAssignmentTests.debug.xcconfig"; path = "Target Support Files/Pods-LBGAssignmentTests/Pods-LBGAssignmentTests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -189,6 +190,7 @@
 			children = (
 				210ECD5B27E340A400C0F799 /* LBGAssignmentUITests.swift */,
 				210ECD5D27E340A400C0F799 /* LBGAssignmentUITestsLaunchTests.swift */,
+				217E854F27EC83A10035D68F /* UnitTestUtilities.swift */,
 			);
 			path = LBGAssignmentUITests;
 			sourceTree = "<group>";
@@ -246,7 +248,6 @@
 			isa = PBXGroup;
 			children = (
 				217E854327E8F1600035D68F /* CustomError.swift */,
-				217E854627E9038F0035D68F /* ErrorHandler.swift */,
 			);
 			path = ErrorHandler;
 			sourceTree = "<group>";
@@ -534,7 +535,6 @@
 				210ECD3F27E340A300C0F799 /* HomeViewController.swift in Sources */,
 				217E853E27E8E9A50035D68F /* ConnectionManager.swift in Sources */,
 				210ECD3B27E340A300C0F799 /* AppDelegate.swift in Sources */,
-				217E854727E9038F0035D68F /* ErrorHandler.swift in Sources */,
 				210ECD8227E65E7B00C0F799 /* HomeViewControllerMoviesDelegateExtension.swift in Sources */,
 				210ECD7A27E5118500C0F799 /* Constants.swift in Sources */,
 				210ECD8727E6702B00C0F799 /* MoviesTableViewCell.swift in Sources */,
@@ -552,6 +552,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				217E855027EC83A10035D68F /* UnitTestUtilities.swift in Sources */,
 				210ECD5227E340A400C0F799 /* LBGAssignmentTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -560,6 +561,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				217E855127EC83A10035D68F /* UnitTestUtilities.swift in Sources */,
 				210ECD5C27E340A400C0F799 /* LBGAssignmentUITests.swift in Sources */,
 				210ECD5E27E340A400C0F799 /* LBGAssignmentUITestsLaunchTests.swift in Sources */,
 			);

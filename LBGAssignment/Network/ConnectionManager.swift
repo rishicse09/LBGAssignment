@@ -9,6 +9,14 @@ import Foundation
 struct ConnectionManager {
 
     static let shared = ConnectionManager()
+    
+    /// This function is responsible to check network connectivity of device and returns Bool.
+    ///
+    /// ```
+    /// hasConnectivity
+    /// ```
+    ///
+    /// - Returns: Bool value which states True for connectivity and False for No-Connectivity.
     static func hasConnectivity() -> Bool {
         do {
             let reachability: Reachability = try Reachability()

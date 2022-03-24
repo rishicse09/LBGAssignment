@@ -8,6 +8,15 @@
 import Foundation
 struct ServiceRequestor {
     
+    /// This function is responsible for fetching movie list and returns a completion handler as closure.
+    ///
+    /// ```
+    /// getMoviesList
+    /// ```
+    /// - Warning: The returned closure  is not optional value.
+    /// - Parameter onCompletion: closure object for completion handler
+    /// - Returns: A closure for completion handler.
+    ///
     func getMoviesList(onCompletion: @escaping([MoviesModel]?, Error?) -> () ) {
         let urlString = Constants.URL.GET_MOVIE
         guard let url = URL(string: urlString) else { return }
@@ -32,6 +41,18 @@ struct ServiceRequestor {
         }
     }
     
+    /// This function is responsible to initialize network call with URLSession and returns a completion handler as closure.
+    ///
+    /// ```
+    /// initiateServiceRequest
+    /// ```
+    ///
+    /// - Warning: The returned closure  is not optional value.
+    /// - Parameter url: URL to fetch data
+    /// - Parameter onCompletion: closure object for completion handler
+    /// - Returns: A closure for completion handler.
+    ///
+    ///
     fileprivate func initiateServiceRequest(url:URL,onCompletion: @escaping(Data?, Error?) -> () ){
         if ConnectionManager.hasConnectivity() {
             URLSession.shared.dataTask(with: url) {(data,response,error) in

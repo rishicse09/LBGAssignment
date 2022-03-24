@@ -7,12 +7,9 @@
 
 import Foundation
 enum CustomError: Error {
-    
     case connectionFailed
-
     // Throw when an expected resource is not found
     case dataError
-
     // Throw in all other cases
     case unexpected
 }

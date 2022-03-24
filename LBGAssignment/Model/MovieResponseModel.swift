@@ -7,7 +7,5 @@
 
 import Foundation
 struct MovieResponseModel: Decodable {
-    
     var results = [MoviesModel]()
-
 }
