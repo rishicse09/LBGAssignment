@@ -13,12 +13,16 @@ extension HomeViewController:MoviesViewModelDelegate {
         defer {
             isRefreshing = false
         }
+        weak var weakself = self
         guard let movieData = movies else {
-            showErrorAlertForMovieList(error: error)
+            DispatchQueue.main.async {
+                weakself?.showErrorAlertForMovieList(error: error)
+            }
+            
             return
         }
         arrMovies = movieData
-        weak var weakself = self
+        
         DispatchQueue.main.async {
             if weakself?.arrMovies.count == 0 {
                 weakself?.showErrorAlertForMovieList(error: CustomError.dataError)
