@@ -14,19 +14,12 @@ class LBGAssignmentUITests: XCTestCase {
         
         // In UI tests it is usually best to stop immediately when a failure occurs.
         continueAfterFailure = false
-        
+        XCUIApplication().launch()
         // In UI tests it’s important to set the initial state - such as interface orientation - required for your tests before they run. The setUp method is a good place to do this.
     }
     
     override func tearDownWithError() throws {
         // Put teardown code here. This method is called after the invocation of each test method in the class.
-    }
-    
-    func testExample() throws {
-        // UI tests must launch the application that they test.
-        let app = XCUIApplication()
-        app.launch()
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
     }
     
     func testLaunchPerformance() throws {
@@ -38,18 +31,35 @@ class LBGAssignmentUITests: XCTestCase {
         }
     }
     
+    func testMovieListNotLoaded()  {
+        let app = XCUIApplication()
+       let getMovieButton = app.staticTexts["Get Movie List"]
+        UnitTestUtilities().waitForElement(forElement: getMovieButton, toShow: true, needToTap: false, assertMessage:nil)
+        XCTAssertTrue(getMovieButton.isHittable, "Get Movie List button is visible")
+        let tableCell = app.tables.children(matching: .cell).element(boundBy: 0).staticTexts["MovieNameLabel"]
+        XCTAssertFalse(tableCell.exists, "Table list not loaded")
+    }
+    
     func testGetMoviesList(){
         waitForMovieList()
     }
     
     func testPullToRefersh()  {
+        let app = XCUIApplication()
         waitForMovieList()
-        XCUIApplication().tables.cells.containing(.staticText, identifier:"Genre: Soundtrack").staticTexts["Track Name: Bollywood"].swipeDown()
+        let firstCell = app.tables.children(matching: .cell).element(boundBy: 0).staticTexts["MovieNameLabel"]
+        let start = firstCell.coordinate(withNormalizedOffset: CGVector(dx: 0, dy: 0)) //coordinateWithNormalizedOffset(CGVectorMake(0, 0))
+        let finish = firstCell.coordinate(withNormalizedOffset: CGVector(dx: 0, dy: 16)) // 16 is to long drag down to happen pull to refresh
+        start.press(forDuration: 0.1, thenDragTo: finish)
+        
     }
     
-    
     fileprivate func waitForMovieList(){
-        let movieCell = XCUIApplication().tables.cells.containing(.staticText, identifier:"Genre: Soundtrack").staticTexts["Track Name: Bollywood"]
+        let app = XCUIApplication()
+        
+        let getMovieButton =  app.buttons["Get Movie List"].staticTexts["Get Movie List"]
+        UnitTestUtilities().waitForElement(forElement: getMovieButton, toShow: true, needToTap: true, assertMessage:nil)
+        let movieCell = app.tables.children(matching: .cell).element(boundBy: 0).staticTexts["MovieNameLabel"]
         UnitTestUtilities().waitForElement(forElement: movieCell, toShow: true, needToTap: false, assertMessage: nil)
     }
     

@@ -18,12 +18,17 @@ struct MoviesViewModel {
         Task {
             do {
                 let serviceRequest = ServiceRequestor()
-                let moviesArray = try await serviceRequest.getMoviesList()
-                if let movies = moviesArray, movies.count > 0 {
-                    delegate?.didReceiveMoviesData(movies: movies, error: nil)
-                    
+                let responseData = try await serviceRequest.getMoviesList()
+                
+                if let err = responseData.error {
+                    delegate?.didReceiveMoviesData(movies: nil, error: err)
                 } else {
-                    delegate?.didReceiveMoviesData(movies: nil, error: CustomError.dataError)
+                    if let movies = responseData.movieModelArray, movies.count > 0 {
+                        delegate?.didReceiveMoviesData(movies: movies, error: nil)
+                        
+                    } else {
+                        delegate?.didReceiveMoviesData(movies: nil, error: CustomError.dataError)
+                    }
                 }
             } catch let serviceError {
                 throw serviceError

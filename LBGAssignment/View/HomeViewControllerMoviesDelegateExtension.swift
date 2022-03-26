@@ -25,9 +25,17 @@ extension HomeViewController:MoviesViewModelDelegate {
         DispatchQueue.main.async {
             if weakself?.arrMovies.count == 0 {
                 weakself?.showErrorAlertForMovieList(error: CustomError.dataError)
+            } else {
+                weakself?.populateUIWithData()
             }
-            self.moviesTableView.reloadData()
+            
         }
+    }
+    
+    fileprivate func populateUIWithData(){
+        moviesTableView.reloadData()
+        GetMovieListButton.isHidden = true
+        moviesTableView.isHidden = false
     }
     
     fileprivate func showErrorAlertForMovieList(error:Error?){

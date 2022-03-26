@@ -11,6 +11,7 @@ class HomeViewController: UIViewController {
     var movieViewModel:MoviesViewModel = MoviesViewModel()
     let refreshControl = UIRefreshControl()
     var isRefreshing = false
+    @IBOutlet weak var GetMovieListButton: UIButton!
     @IBOutlet weak var moviesTableView: UITableView!
     //MARK: - View Controller Life Cycle
     override func viewDidLoad() {
@@ -19,7 +20,6 @@ class HomeViewController: UIViewController {
         jailBreakChecker()
         initialiseTableViewComponents()
         movieViewModel.delegate = self
-        fetchMovieList()
     }
     
     //MARK: - Business Logic
@@ -32,6 +32,11 @@ class HomeViewController: UIViewController {
         if JailBreakChecker.isJailbroken() {
             exit(0)
         }
+    }
+    
+    //MARK: - Event Handlers
+    @IBAction func GetMovieListButton_tapped(_ sender: Any) {
+        fetchMovieList()
     }
 }
 

@@ -32,6 +32,17 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mbc-7R-J8n">
+                                <rect key="frame" x="103.5" y="450" width="207" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="Dv5-6L-Jzd"/>
+                                </constraints>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Get Movie List"/>
+                                <connections>
+                                    <action selector="GetMovieListButton_tapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="qmf-5h-j8H"/>
+                                </connections>
+                            </button>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="JU1-xj-CoK" userLabel="moviesListTable">
                                 <rect key="frame" x="0.0" y="88" width="414" height="774"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -45,13 +56,17 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="JU1-xj-CoK" secondAttribute="bottom" id="L54-0G-6da"/>
+                            <constraint firstItem="mbc-7R-J8n" firstAttribute="centerY" secondItem="6Tk-OE-BBY" secondAttribute="centerY" id="PkG-H6-xpx"/>
                             <constraint firstItem="JU1-xj-CoK" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="T64-f7-gi7"/>
+                            <constraint firstItem="mbc-7R-J8n" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" multiplier="0.5" id="ZeH-hb-prf"/>
+                            <constraint firstItem="mbc-7R-J8n" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="jLV-v4-med"/>
                             <constraint firstItem="JU1-xj-CoK" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="nVo-Ls-C3W"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="JU1-xj-CoK" secondAttribute="trailing" id="pVM-7q-2n7"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Movies" id="eIn-uQ-wxO"/>
                     <connections>
+                        <outlet property="GetMovieListButton" destination="mbc-7R-J8n" id="hdI-fa-1JH"/>
                         <outlet property="moviesTableView" destination="JU1-xj-CoK" id="R3K-1D-7eN"/>
                     </connections>
                 </viewController>

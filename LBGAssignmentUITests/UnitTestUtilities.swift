@@ -16,9 +16,9 @@ class UnitTestUtilities:XCTestCase {
             assertMsg = msg
         } else {
             if toShow {
-                assertMsg = "element \(forElement.title) appeared"
+                assertMsg = "element appeared"
             } else {
-                assertMsg = "element \(forElement.title) doesn't appeared"
+                assertMsg = "element doesn't appeared"
             }
         }
         waitWithPredicate(predicate: exists, forElement: forElement, needToTap: needToTap, assertMessage: assertMsg)

@@ -178,8 +178,11 @@ extension LazyImage {
         self.spinner!.frame = view.bounds
         self.spinner!.hidesWhenStopped = true
         self.spinner!.style = UIActivityIndicatorView.Style.gray
-        view.addSubview(self.spinner!)
-        self.spinner!.startAnimating()
+        DispatchQueue.main.async {
+            view.addSubview(self.spinner!)
+            self.spinner!.startAnimating()
+        }
+        
     }
     
     private func removeActivityIndicator() {

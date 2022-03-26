@@ -13,6 +13,7 @@ extension HomeViewController:UITableViewDelegate, UITableViewDataSource {
     
     //MARK: - UI Components Define
     func initialiseTableViewComponents() {
+        moviesTableView.isHidden = true
         moviesTableView.estimatedRowHeight = 60.0
         moviesTableView.rowHeight = UITableView.automaticDimension
         moviesTableView.tableFooterView = UIView(frame: .zero)
