@@ -22,7 +22,6 @@ extension HomeViewController:MoviesViewModelDelegate {
             return
         }
         arrMovies = movieData
-        
         DispatchQueue.main.async {
             if weakself?.arrMovies.count == 0 {
                 weakself?.showErrorAlertForMovieList(error: CustomError.dataError)
