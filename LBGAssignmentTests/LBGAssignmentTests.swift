@@ -33,4 +33,43 @@ class LBGAssignmentTests: XCTestCase {
         }
     }
 
+    
+    func testForMovieApiResultsWithCorrectURL() async throws{
+        let urlString = Constants.URL.GET_MOVIE
+        guard let urlRequest = getURLRequestForURL(urlString: urlString) else {
+            return
+        }
+        
+        let response =   try await ServiceRequestor().fetchAndParseMovieData(urlRequest: urlRequest)
+        
+        guard let movies = response.movieModelArray else {
+            XCTAssertFalse(1==2, "Test case failed to fetch data with correct URL")
+            return
+        }
+        XCTAssertTrue(movies.count > 0, "Data recieved successfully")
+    }
+    
+    func testForMovieApiResultsWithInCorrectURL() async throws{
+        let urlString = "\(Constants.URL.GET_MOVIE)abcd" // abcd to destroy URL
+        guard let urlRequest = getURLRequestForURL(urlString: urlString) else {
+            return
+        }
+        
+        let response =   try await ServiceRequestor().fetchAndParseMovieData(urlRequest: urlRequest)
+        
+        guard let error = response.error else {
+            XCTAssertFalse(1==2, "Test case failed to throw error with incorrect URL")
+            return
+        }
+        XCTAssertNotNil(error, "Service failed and error received")
+    }
+    
+    fileprivate func getURLRequestForURL(urlString:String) -> URLRequest? {
+        guard let url = URL(string: urlString) else {
+            XCTAssertFalse(1==2, "URL String cant be converted into url")
+            return nil
+        }
+        let urlRequest = URLRequest(url: url)
+        return urlRequest
+    }
 }

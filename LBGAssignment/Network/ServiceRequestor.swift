@@ -24,6 +24,14 @@ struct ServiceRequestor {
         }
         var urlRequest = URLRequest(url: url)
         urlRequest.httpMethod = "get"
+        do {
+            return try await fetchAndParseMovieData(urlRequest: urlRequest)
+        } catch  {
+            throw CustomError.unexpected
+        }
+    }
+    
+    func fetchAndParseMovieData(urlRequest:URLRequest) async throws  -> (movieModelArray:[MoviesModel]?, error:Error?) {
         var moviesArray = [MoviesModel]()
         do {
             let response =  try await initiateServiceRequest(request: urlRequest)
@@ -51,7 +59,6 @@ struct ServiceRequestor {
     /// - Returns: Optional value of Server Data.
     
     fileprivate func  initiateServiceRequest(request: URLRequest) async throws -> (responseData:Data?, serviceError:Error?){
-        
         if !ConnectionManager.hasConnectivity() {
             return (nil,CustomError.connectionFailed)
         }
