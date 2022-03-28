@@ -7,14 +7,18 @@
 
 import Foundation
 struct ServiceRequestor {
- 
-    /// This function is responsible for fetching movie list and returns an optional array of Movies Model.
+    
+    /// This function is responsible for fetching movie list and returns a tuple of  optional Movies Model and optional errorl.
     ///
     /// ```
     /// getMoviesList
     /// ```
     /// - Warning: The function returns  an optional value also can throw an exception
-    /// - Returns: An array of Movies Model
+    /// - Parameter method:  - Service Request method which will  define which method needs to be called
+    /// - Parameter requestType:  - Data request type which will decide to request for test data or live data
+    /// - Parameter responseType: - Mock data response type, which will decide the nature of returned object in mock enviroment
+    ///
+    /// - Returns: A tuple of  optional Movies Model and optional error.
     ///
     func getMoviesList(method:ServiceRequestMethod, requestType:DataRequestType? = nil,responseType:MockDataResponseType? = nil) async throws -> (movieModelArray:[MoviesModel]?, error:Error?) {
         guard let url = ServiceRequestUtility().getURLForMethod(method: method) else {
@@ -29,7 +33,19 @@ struct ServiceRequestor {
         }
     }
     
-   fileprivate func fetchAndParseMovieData(urlRequest:URLRequest,requestType:DataRequestType? = nil,responseType:MockDataResponseType? = nil,method:ServiceRequestMethod? = nil) async throws -> (movieModelArray:[MoviesModel]?, error:Error?) {
+    /// This function is responsible for fetching movie list and returns  a ttuple of  optional Movies Model and optional error
+    ///
+    /// ```
+    /// fetchAndParseMovieData
+    /// ```
+    /// - Warning: The function returns  an optional value also can throw an exception
+    /// - Parameter method:  - Service Request method which will  define which method needs to be called
+    /// - Parameter requestType:  - Data request type which will decide to request for test data or live data
+    /// - Parameter responseType: - Mock data response type, which will decide the nature of returned object in mock enviroment
+    ///
+    /// - Returns: A tuple of  optional Movies Model and optional error.
+    ///
+    fileprivate func fetchAndParseMovieData(urlRequest:URLRequest,requestType:DataRequestType? = nil,responseType:MockDataResponseType? = nil,method:ServiceRequestMethod? = nil) async throws -> (movieModelArray:[MoviesModel]?, error:Error?) {
         var moviesArray = [MoviesModel]()
         do {
             let response =  try await initiateServiceRequest(request:urlRequest,requestType:requestType ,responseType:responseType,method:method)
@@ -46,16 +62,17 @@ struct ServiceRequestor {
         return moviesArray.count > 0 ? (moviesArray, nil) : (nil, CustomError.unexpected)
     }
     
-    /// This function is responsible to initialize network call with URLSession and returns an optional server Datal.
-    ///
+    /// This function is responsible to initialize network call with URLSession and returns a tuple of  optional Movies Model and optional error.
     /// ```
     /// initiateServiceRequest
     /// ```
+    /// - Warning: The function returns  an optional value also can throw an exception
+    /// - Parameter method:  - Service Request method which will  define which method needs to be called
+    /// - Parameter requestType:  - Data request type which will decide to request for test data or live data
+    /// - Parameter responseType: - Mock data response type, which will decide the nature of returned object in mock enviroment
+    /// - Returns: A tuple of  optional Movies Model and optional error.
     ///
-    /// - Warning: The returned closure  is not optional value.
-    /// - Parameter urlRequest: URL Request to fetch data
-    /// - Returns: Optional value of Server Data.
-    
+    ///
     fileprivate func  initiateServiceRequest(request:URLRequest,requestType:DataRequestType? = nil,responseType:MockDataResponseType? = nil,method:ServiceRequestMethod? = nil) async throws -> (responseData:Data?, serviceError:Error?){
         if !ConnectionManager.hasConnectivity() {
             return (nil,CustomError.connectionFailed)
@@ -77,6 +94,17 @@ struct ServiceRequestor {
         }
     }
     
+    /// This function is responsible to get response from Mock data and returns a tuple of  optional Movies Model and optional error.
+    /// ```
+    /// getMockData
+    /// ```
+    /// - Warning: The function returns  an optional value also can throw an exception
+    /// - Parameter method:  - Service Request method which will  define which method needs to be called
+    /// - Parameter requestType:  - Data request type which will decide to request for test data or live data
+    /// - Parameter responseType: - Mock data response type, which will decide the nature of returned object in mock enviroment
+    /// - Returns: A tuple of  optional Movies Model and optional error.
+    ///
+    ///
     fileprivate func getMockData(responseType:MockDataResponseType? = nil,method:ServiceRequestMethod? = nil) async throws -> (responseData:Data?, serviceError:Error?){
         let mockDataRequestor = MockDataRequestor()
         if let data =  mockDataRequestor.getMockDataResponse(responseType: responseType, method: method) {
@@ -85,7 +113,6 @@ struct ServiceRequestor {
         }
         debugPrint("error occured")
         return (nil,CustomError.unexpected)
-        
     }
 }
 
