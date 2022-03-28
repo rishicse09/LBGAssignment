@@ -52,7 +52,7 @@ extension MoviesListViewController:UITableViewDelegate, UITableViewDataSource {
     }
     
     //MARK: - Custom UI Creation
-    fileprivate func createMoviesCell (_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell{
+    private func createMoviesCell (_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell{
         let cell: MoviesTableViewCell = tableView.dequeueReusableCell(withIdentifier: MOVIES_CELL_IDENTIFIER, for: indexPath) as! MoviesTableViewCell
         let movieData = arrMovies[indexPath.row]
         cell.lblTrackName.text = "\(Constants.MovieCellTitles.TRACK_NAME) \(movieData.trackName)"

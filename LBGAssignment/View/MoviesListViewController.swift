@@ -1,5 +1,5 @@
 //
-//  ViewController.swift
+//  MoviesListViewController.swift
 //  LBGAssignment
 //
 //  Created by RishiChaurasia on 20/03/22.
@@ -8,7 +8,7 @@ import UIKit
 
 class MoviesListViewController: UIViewController {
     var arrMovies = [MoviesModel]()
-    var movieViewModel:MoviesViewModel = MoviesViewModel()
+    private var movieViewModel:MoviesViewModel = MoviesViewModel()
     let refreshControl = UIRefreshControl()
     var isRefreshing = false
     @IBOutlet weak var GetMovieListButton: UIButton!
@@ -17,7 +17,6 @@ class MoviesListViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
-        jailBreakChecker()
         initialiseTableViewComponents()
         movieViewModel.delegate = self
     }
@@ -27,24 +26,17 @@ class MoviesListViewController: UIViewController {
         movieViewModel.getMovieListWithSearchString(searchString:searchString)
     }
     
-    fileprivate func jailBreakChecker(){
-        //Jail Break Check
-        if JailBreakChecker.isJailbroken() {
-            exit(0)
-        }
-    }
-    
     //MARK: - Event Handlers
-    @IBAction func GetMovieListButton_tapped(_ sender: Any) {
+    @IBAction private func getMovieListButton_tapped(_ sender: Any) {
         fetchMovieListWithSearchString(searchString:Constants.MovieSearchString.VALID_STRING)
     }
     
-    @IBAction func GetEmptyMovieListButton_tapped(_ sender: Any) {
+    @IBAction private func getEmptyMovieListButton_tapped(_ sender: Any) {
         fetchMovieListWithSearchString(searchString:Constants.MovieSearchString.INVALID_STRING)
     }
     
-    @IBAction func GetErrorMovieListButton_tapped(_ sender: Any) {
-//        fetchMovieListWithSearchString(searchString:Constants.MovieSearchString.INVALID_STRING)
+    @IBAction private func getErrorMovieListButton_tapped(_ sender: Any) {
+        //        fetchMovieListWithSearchString(searchString:Constants.MovieSearchString.INVALID_STRING)
     }
 }
 

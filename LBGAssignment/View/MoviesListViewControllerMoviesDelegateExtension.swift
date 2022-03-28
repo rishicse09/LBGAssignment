@@ -18,7 +18,6 @@ extension MoviesListViewController:MoviesViewModelDelegate {
             DispatchQueue.main.async {
                 weakself?.showErrorAlertForMovieList(error: error)
             }
-            
             return
         }
         arrMovies = movieData
@@ -28,17 +27,16 @@ extension MoviesListViewController:MoviesViewModelDelegate {
             } else {
                 weakself?.populateUIWithData()
             }
-            
         }
     }
     
-    fileprivate func populateUIWithData(){
+    private func populateUIWithData(){
         moviesTableView.reloadData()
         GetMovieListButton.isHidden = true
         moviesTableView.isHidden = false
     }
     
-    fileprivate func showErrorAlertForMovieList(error:Error?){
+    private func showErrorAlertForMovieList(error:Error?){
         guard let err = error else { return  }
         if let customError = err as? CustomError {
             switch customError {
