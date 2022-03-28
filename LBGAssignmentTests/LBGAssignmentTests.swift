@@ -68,7 +68,7 @@ class LBGAssignmentTests: XCTestCase {
         }
         XCTAssertNotNil(error, "Service failed and error received")
     }
-    fileprivate func getURLRequestForURL(urlString: String) -> URLRequest? {
+    private func getURLRequestForURL(urlString: String) -> URLRequest? {
         guard let url = URL(string: urlString) else {
             XCTAssertFalse(1==2, "URL String cant be converted into url")
             return nil

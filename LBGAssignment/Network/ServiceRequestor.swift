@@ -51,7 +51,7 @@ struct ServiceRequestor {
     ///
     /// - Returns: A tuple of  optional Movies Model and optional error.
     ///
-    fileprivate func fetchAndParseMovieData(urlRequest: URLRequest,
+    private func fetchAndParseMovieData(urlRequest: URLRequest,
                                             requestType: DataRequestType? = nil,
                                             responseType: MockDataResponseType? = nil,
                                             method: ServiceRequestMethod? = nil) async throws -> (movieModelArray: [MoviesModel]?, error: Error?) {
@@ -84,7 +84,7 @@ struct ServiceRequestor {
     /// - Returns: A tuple of  optional Movies Model and optional error.
     ///
     ///
-    fileprivate func  initiateServiceRequest(request: URLRequest,
+    private func  initiateServiceRequest(request: URLRequest,
                                              requestType: DataRequestType? = nil,
                                              responseType: MockDataResponseType? = nil,
                                              method: ServiceRequestMethod? = nil) async throws -> (responseData: Data?, serviceError: Error?) {
@@ -118,7 +118,7 @@ struct ServiceRequestor {
     /// - Returns: A tuple of  optional Movies Model and optional error.
     ///
     ///
-    fileprivate func getMockData(responseType: MockDataResponseType? = nil,
+    private func getMockData(responseType: MockDataResponseType? = nil,
                                  method: ServiceRequestMethod? = nil) async throws -> (responseData: Data?, serviceError: Error?) {
         let mockDataRequestor = MockDataRequestor()
         if let data =  mockDataRequestor.getMockDataResponse(responseType: responseType, method: method) {

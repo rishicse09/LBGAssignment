@@ -19,16 +19,16 @@ extension MoviesListViewController: UITableViewDelegate, UITableViewDataSource {
         registerNibs()
         addRefreshControl()
     }
-    fileprivate func registerNibs() {
+    private func registerNibs() {
         let moviesCellNib = UINib(nibName: "MoviesTableViewCell", bundle: nil)
         moviesTableView!.register(moviesCellNib, forCellReuseIdentifier: moviesCellIdentifier)
     }
-    fileprivate func addRefreshControl() {
+    private func addRefreshControl() {
         refreshControl.attributedTitle = NSAttributedString(string: "Pull to refresh")
         refreshControl.addTarget(self, action: #selector(refreshMovieListData), for: .valueChanged)
         moviesTableView.addSubview(refreshControl)
     }
-    @objc fileprivate func refreshMovieListData() {
+    @objc private func refreshMovieListData() {
         if isRefreshing {
             refreshControl.endRefreshing()
             return
