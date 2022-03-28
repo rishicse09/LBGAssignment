@@ -52,9 +52,9 @@ struct ServiceRequestor {
     /// - Returns: A tuple of  optional Movies Model and optional error.
     ///
     private func fetchAndParseMovieData(urlRequest: URLRequest,
-                                            requestType: DataRequestType? = nil,
-                                            responseType: MockDataResponseType? = nil,
-                                            method: ServiceRequestMethod? = nil) async throws -> (movieModelArray: [MoviesModel]?, error: Error?) {
+                                        requestType: DataRequestType? = nil,
+                                        responseType: MockDataResponseType? = nil,
+                                        method: ServiceRequestMethod? = nil) async throws -> (movieModelArray: [MoviesModel]?, error: Error?) {
         var moviesArray = [MoviesModel]()
         do {
             let response =  try await initiateServiceRequest(request: urlRequest,
@@ -85,9 +85,9 @@ struct ServiceRequestor {
     ///
     ///
     private func  initiateServiceRequest(request: URLRequest,
-                                             requestType: DataRequestType? = nil,
-                                             responseType: MockDataResponseType? = nil,
-                                             method: ServiceRequestMethod? = nil) async throws -> (responseData: Data?, serviceError: Error?) {
+                                         requestType: DataRequestType? = nil,
+                                         responseType: MockDataResponseType? = nil,
+                                         method: ServiceRequestMethod? = nil) async throws -> (responseData: Data?, serviceError: Error?) {
         if !ConnectionManager.hasConnectivity() {
             return (nil, CustomError.connectionFailed)
         }
@@ -119,7 +119,7 @@ struct ServiceRequestor {
     ///
     ///
     private func getMockData(responseType: MockDataResponseType? = nil,
-                                 method: ServiceRequestMethod? = nil) async throws -> (responseData: Data?, serviceError: Error?) {
+                             method: ServiceRequestMethod? = nil) async throws -> (responseData: Data?, serviceError: Error?) {
         let mockDataRequestor = MockDataRequestor()
         if let data =  mockDataRequestor.getMockDataResponse(responseType: responseType, method: method) {
             debugPrint("got data")
