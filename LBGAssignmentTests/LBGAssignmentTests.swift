@@ -34,7 +34,7 @@ class LBGAssignmentTests: XCTestCase {
     }
     
     func testForMovieApiResultsWithCorrectURL() async throws {
-        let response =   try await ServiceRequestor().getMoviesList(method: .getMovieList, requestType: .testData, responseType: .success_with_result)//fetchAndParseMovieData(urlRequest: urlRequest)
+        let response =   try await ServiceRequestor().getMoviesList(searchString: Constants.MovieSearchString.VALID_STRING, method: .getMovieList, requestType: .testData, responseType: .success_with_result)//fetchAndParseMovieData(urlRequest: urlRequest)
         guard let movies = response.movieModelArray else {
             XCTAssertFalse(1==2, "Test case failed to fetch data with correct URL")
             return
@@ -43,7 +43,7 @@ class LBGAssignmentTests: XCTestCase {
     }
     
     func testForMovieApiEmptyResultsWithCorrectURL() async throws{
-        let response =   try await ServiceRequestor().getMoviesList(method: .getMovieList, requestType: .testData, responseType: .success_with_empty_result)//fetchAndParseMovieData(urlRequest: urlRequest)
+        let response =   try await ServiceRequestor().getMoviesList(searchString: Constants.MovieSearchString.INVALID_STRING,method: .getMovieList, requestType: .testData, responseType: .success_with_empty_result)//fetchAndParseMovieData(urlRequest: urlRequest)
         guard let movies = response.movieModelArray else {
             XCTAssertFalse(1==2, "Test case failed to fetch data with correct URL")
             return
@@ -52,7 +52,7 @@ class LBGAssignmentTests: XCTestCase {
     }
     
     func testForMovieApiResultsWithInCorrectURL() async throws{
-        let response =   try await ServiceRequestor().getMoviesList(method: .getMovieList, requestType: .testData, responseType: .failed_with_error)//fetchAndParseMovieData(urlRequest: urlRequest)
+        let response =   try await ServiceRequestor().getMoviesList(searchString: Constants.MovieSearchString.INVALID_STRING,method: .getMovieList, requestType: .testData, responseType: .failed_with_error)//fetchAndParseMovieData(urlRequest: urlRequest)
         guard let error = response.error else {
             XCTAssertFalse(1==2, "Test case failed to throw error with incorrect URL")
             return

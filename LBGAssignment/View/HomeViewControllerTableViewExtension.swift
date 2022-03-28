@@ -38,7 +38,7 @@ extension HomeViewController:UITableViewDelegate, UITableViewDataSource {
             return
         }
         isRefreshing = true
-        fetchMovieList()
+        fetchMovieListWithSearchString(searchString:Constants.MovieSearchString.VALID_STRING)
         refreshControl.endRefreshing()
     }
     

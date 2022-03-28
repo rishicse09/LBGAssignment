@@ -23,8 +23,8 @@ class HomeViewController: UIViewController {
     }
     
     //MARK: - Business Logic
-    func fetchMovieList()  {
-        movieViewModel.getMovieList()
+    func fetchMovieListWithSearchString(searchString:String) {
+        movieViewModel.getMovieListWithSearchString(searchString:searchString)
     }
     
     fileprivate func jailBreakChecker(){
@@ -36,7 +36,15 @@ class HomeViewController: UIViewController {
     
     //MARK: - Event Handlers
     @IBAction func GetMovieListButton_tapped(_ sender: Any) {
-        fetchMovieList()
+        fetchMovieListWithSearchString(searchString:Constants.MovieSearchString.VALID_STRING)
+    }
+    
+    @IBAction func GetEmptyMovieListButton_tapped(_ sender: Any) {
+        fetchMovieListWithSearchString(searchString:Constants.MovieSearchString.INVALID_STRING)
+    }
+    
+    @IBAction func GetErrorMovieListButton_tapped(_ sender: Any) {
+//        fetchMovieListWithSearchString(searchString:Constants.MovieSearchString.INVALID_STRING)
     }
 }
 

@@ -20,8 +20,11 @@ struct ServiceRequestor {
     ///
     /// - Returns: A tuple of  optional Movies Model and optional error.
     ///
-    func getMoviesList(method:ServiceRequestMethod, requestType:DataRequestType? = nil,responseType:MockDataResponseType? = nil) async throws -> (movieModelArray:[MoviesModel]?, error:Error?) {
-        guard let url = ServiceRequestUtility().getURLForMethod(method: method) else {
+    func getMoviesList(searchString:String, method:ServiceRequestMethod, requestType:DataRequestType? = nil,responseType:MockDataResponseType? = nil) async throws -> (movieModelArray:[MoviesModel]?, error:Error?) {
+        var urlString = ServiceRequestUtility().getURLStringForMethod(method: method)
+        urlString = "\(urlString)\(searchString)"
+        
+        guard let url = ServiceRequestUtility().getURLFromString(urlString: urlString) else {
             return (nil, CustomError.unexpected)
         }
         var urlRequest = URLRequest(url: url)
@@ -59,7 +62,7 @@ struct ServiceRequestor {
         } catch  {
             throw CustomError.unexpected
         }
-        return moviesArray.count > 0 ? (moviesArray, nil) : (nil, CustomError.unexpected)
+        return moviesArray.count > 0 ? (moviesArray, nil) : (nil, CustomError.dataError)
     }
     
     /// This function is responsible to initialize network call with URLSession and returns a tuple of  optional Movies Model and optional error.

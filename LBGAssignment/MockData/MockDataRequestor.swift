@@ -30,6 +30,9 @@ class MockDataRequestor:MockDataRequestorProtocol{
         case .getMovieList:
            debugPrint("movie list")
             return getMockDataResponseMovies(responseType: responseType)
+        default:
+            return nil
+            
         }
     }
     

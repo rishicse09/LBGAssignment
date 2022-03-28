@@ -12,8 +12,15 @@ enum ServiceRequestMethod:String {
 }
 
 struct ServiceRequestUtility{
-    func getURLForMethod(method:ServiceRequestMethod) -> URL?{
-        let urlString = Constants.URL.GET_MOVIE
+    
+    func getURLStringForMethod(method:ServiceRequestMethod) -> String {
+        switch method {
+        case .getMovieList:
+            return Constants.URLString.GET_MOVIE
+        }
+    }
+    
+    func getURLFromString(urlString:String) -> URL? {
         guard let url = URL(string: urlString) else {
             return nil
         }

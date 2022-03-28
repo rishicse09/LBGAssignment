@@ -14,7 +14,7 @@ class LBGAssignmentUITests: XCTestCase {
         
         // In UI tests it is usually best to stop immediately when a failure occurs.
         continueAfterFailure = false
-        let app = XCUIApplication()        
+        let app = XCUIApplication()
         app.launch()
         // In UI tests it’s important to set the initial state - such as interface orientation - required for your tests before they run. The setUp method is a good place to do this.
     }
@@ -55,9 +55,19 @@ class LBGAssignmentUITests: XCTestCase {
         
     }
     
+    func testEmptyListShowsError()  {
+        let app = XCUIApplication()
+        let getEmptyListButton = app.buttons["Get Empty List Button"].staticTexts["Get Empty List"]
+        UnitTestUtilities().waitForElement(forElement: getEmptyListButton, toShow: true, needToTap: true, assertMessage:nil)
+        let alert = app.alerts["Connection Failed"].scrollViews.otherElements
+        let alertTitle = alert.staticTexts["Error while retreiving data. Please try again later."]
+        UnitTestUtilities().waitForElement(forElement: alertTitle, toShow: true, needToTap: false, assertMessage:nil)
+        XCTAssertTrue(alertTitle.exists, "no data alert shown")
+        alert.buttons["Ok"].tap()
+    }
+    
     fileprivate func waitForMovieList(){
         let app = XCUIApplication()
-        
         let getMovieButton =  app.buttons["Get Movie List"].staticTexts["Get Movie List"]
         UnitTestUtilities().waitForElement(forElement: getMovieButton, toShow: true, needToTap: true, assertMessage:nil)
         let movieCell = app.tables.children(matching: .cell).element(boundBy: 0).staticTexts["MovieNameLabel"]

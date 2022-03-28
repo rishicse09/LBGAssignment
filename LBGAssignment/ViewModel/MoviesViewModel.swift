@@ -14,11 +14,11 @@ protocol MoviesViewModelDelegate {
 struct MoviesViewModel {
     var delegate : MoviesViewModelDelegate?
     
-    func getMovieList() {
+    func getMovieListWithSearchString(searchString:String) {
         Task {
             do {
                 let serviceRequest = ServiceRequestor()
-                let responseData = try await serviceRequest.getMoviesList(method: .getMovieList)
+                let responseData = try await serviceRequest.getMoviesList(searchString:searchString,method: .getMovieList)
                 if let err = responseData.error {
                     delegate?.didReceiveMoviesData(movies: nil, error: err)
                 } else {

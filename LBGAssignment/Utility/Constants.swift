@@ -8,8 +8,14 @@
 import Foundation
 
 struct Constants {
-    struct URL {
-        static let GET_MOVIE = "https://itunes.apple.com/search?media=music&term=bollywood"
+    
+    struct MovieSearchString {
+        static let VALID_STRING = "bollywood"
+        static let INVALID_STRING = "jollywoodabcd"
+    }
+    
+    struct URLString {
+        static let GET_MOVIE = "https://itunes.apple.com/search?media=music&term="
     }
     
     struct MovieCellTitles{
