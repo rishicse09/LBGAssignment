@@ -23,7 +23,8 @@ class LBGAssignmentTests: XCTestCase {
         // Use XCTAssert and related functions to verify your tests produce the correct results.
         // Any test you write for XCTest can be annotated as throws and async.
         // Mark your test throws to produce an unexpected failure when your test encounters an uncaught error.
-        // Mark your test async to allow awaiting for asynchronous code to complete. Check the results with assertions afterwards.
+        // Mark your test async to allow awaiting for asynchronous code to complete.
+        // Check the results with assertions afterwards.
     }
 
     func testPerformanceExample() throws {
@@ -32,35 +33,42 @@ class LBGAssignmentTests: XCTestCase {
             // Put the code you want to measure the time of here.
         }
     }
-    
     func testForMovieApiResultsWithCorrectURL() async throws {
-        let response =   try await ServiceRequestor().getMoviesList(searchString: Constants.MovieSearchString.VALID_STRING, method: .getMovieList, requestType: .testData, responseType: .success_with_result)//fetchAndParseMovieData(urlRequest: urlRequest)
-        guard let movies = response.movieModelArray else {
+        let result =  try await ServiceRequestor().getMoviesList(searchString: Constants.MovieSearchString.VALID_STRING,
+                                                                    method: .getMovieList,
+                                                                    requestType: .testData,
+                                                                    responseType: .successWithResult)
+        guard let movies = result.movieModelArray else {
             XCTAssertFalse(1==2, "Test case failed to fetch data with correct URL")
             return
         }
         XCTAssertTrue(movies.count > 0, "Data recieved successfully")
     }
-    
-    func testForMovieApiEmptyResultsWithCorrectURL() async throws{
-        let response =   try await ServiceRequestor().getMoviesList(searchString: Constants.MovieSearchString.INVALID_STRING,method: .getMovieList, requestType: .testData, responseType: .success_with_empty_result)//fetchAndParseMovieData(urlRequest: urlRequest)
-        guard let movies = response.movieModelArray else {
+    func testForMovieApiEmptyResultsWithCorrectURL() async throws {
+        let result =  try await ServiceRequestor().getMoviesList(
+            searchString: Constants.MovieSearchString.INVALID_STRING,
+            method: .getMovieList,
+            requestType: .testData,
+            responseType: .successWithEmptyResult)
+        guard let movies = result.movieModelArray else {
             XCTAssertFalse(1==2, "Test case failed to fetch data with correct URL")
             return
         }
         XCTAssertTrue(movies.count > 0, "Data recieved successfully")
     }
-    
-    func testForMovieApiResultsWithInCorrectURL() async throws{
-        let response =   try await ServiceRequestor().getMoviesList(searchString: Constants.MovieSearchString.INVALID_STRING,method: .getMovieList, requestType: .testData, responseType: .failed_with_error)//fetchAndParseMovieData(urlRequest: urlRequest)
+    func testForMovieApiResultsWithInCorrectURL() async throws {
+        let response =   try await ServiceRequestor().getMoviesList(
+            searchString: Constants.MovieSearchString.INVALID_STRING,
+            method: .getMovieList,
+            requestType: .testData,
+            responseType: .failedWithError)
         guard let error = response.error else {
             XCTAssertFalse(1==2, "Test case failed to throw error with incorrect URL")
             return
         }
         XCTAssertNotNil(error, "Service failed and error received")
     }
-    
-    fileprivate func getURLRequestForURL(urlString:String) -> URLRequest? {
+    fileprivate func getURLRequestForURL(urlString: String) -> URLRequest? {
         guard let url = URL(string: urlString) else {
             XCTAssertFalse(1==2, "URL String cant be converted into url")
             return nil

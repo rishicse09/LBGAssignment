@@ -1,0 +1,14 @@
+excluded: # paths to ignore during linting. Takes precedence over `included`.
+  - Carthage
+  - Pods
+  - LBGAssignment/Network/Reachability.swift
+
+line_length: 300
+identifier_name:
+  allowed_symbols: "_"
+type_name:
+  allowed_symbols: "_"
+
+disabled_rules: # rule identifiers to exclude from running
+  - class_delegate_protocol
+  - nesting

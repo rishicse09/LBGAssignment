@@ -44,7 +44,7 @@
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="plain" title="Get Error while fetching list"/>
                                         <connections>
-                                            <action selector="GetErrorMovieListButton_tapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Uwj-4O-gZh"/>
+                                            <action selector="getErrorMovieListButton_tapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="SHo-hi-lPB"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mbc-7R-J8n">
@@ -55,7 +55,7 @@
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="plain" title="Get Movie List"/>
                                         <connections>
-                                            <action selector="GetMovieListButton_tapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="qmf-5h-j8H"/>
+                                            <action selector="getMovieListButton_tapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="rlb-sa-Two"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zbV-SC-y1T">
@@ -67,7 +67,7 @@
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="plain" title="Get Empty List"/>
                                         <connections>
-                                            <action selector="GetEmptyMovieListButton_tapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="LyG-3A-Sep"/>
+                                            <action selector="getEmptyMovieListButton_tapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="qYu-Ol-jc3"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -95,7 +95,7 @@
                     </view>
                     <navigationItem key="navigationItem" title="Movies" id="eIn-uQ-wxO"/>
                     <connections>
-                        <outlet property="GetMovieListButton" destination="mbc-7R-J8n" id="hdI-fa-1JH"/>
+                        <outlet property="getMovieListButton" destination="mbc-7R-J8n" id="hdI-fa-1JH"/>
                         <outlet property="moviesTableView" destination="JU1-xj-CoK" id="R3K-1D-7eN"/>
                     </connections>
                 </viewController>

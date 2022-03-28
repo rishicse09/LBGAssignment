@@ -8,7 +8,6 @@
 import Foundation
 import UIKit
 struct JailBreakChecker {
-    
     /// This function is responsible to check for Jailbreaked device and returns Bool.
     ///
     /// ```
@@ -29,12 +28,12 @@ struct JailBreakChecker {
             fileManager.fileExists(atPath: "/usr/bin/ssh") {
             return true
         }
-        if canOpen(path:"/Applications/Cydia.app") ||
-            canOpen(path:"/Library/MobileSubstrate/MobileSubstrate.dylib") ||
-            canOpen(path:"/bin/bash") ||
-            canOpen(path:"/usr/sbin/sshd") ||
-            canOpen(path:"/etc/apt") ||
-            canOpen(path:"/usr/bin/ssh") {
+        if canOpen(path: "/Applications/Cydia.app") ||
+            canOpen(path: "/Library/MobileSubstrate/MobileSubstrate.dylib") ||
+            canOpen(path: "/bin/bash") ||
+            canOpen(path: "/usr/sbin/sshd") ||
+            canOpen(path: "/etc/apt") ||
+            canOpen(path: "/usr/bin/ssh") {
             return true
         }
         let path = "/private/" + NSUUID().uuidString
@@ -46,7 +45,6 @@ struct JailBreakChecker {
             return false
         }
     }
-    
     static func canOpen(path: String) -> Bool {
         let file = fopen(path, "r")
         guard file != nil else { return false }
@@ -54,4 +52,3 @@ struct JailBreakChecker {
         return true
     }
 }
-

@@ -7,13 +7,11 @@
 
 import Foundation
 import XCTest
-class UnitTestUtilities:XCTestCase {
-    
+class UnitTestUtilities: XCTestCase {
     func getLaunchArguement() -> String {
         return "TestCasesExecution"
     }
-    
-    func waitForElement(forElement:XCUIElement, toShow:Bool, needToTap:Bool,assertMessage: String?) {
+    func waitForElement(element: XCUIElement, toShow: Bool, needToTap: Bool, assertMessage: String? = nil) {
         let exists = NSPredicate(format: "exists == \(toShow)")
         var assertMsg = ""
         if let msg = assertMessage {
@@ -25,10 +23,9 @@ class UnitTestUtilities:XCTestCase {
                 assertMsg = "element doesn't appeared"
             }
         }
-        waitWithPredicate(predicate: exists, forElement: forElement, needToTap: needToTap, assertMessage: assertMsg)
+        waitWithPredicate(predicate: exists, forElement: element, needToTap: needToTap, assertMessage: assertMsg)
     }
-    
-    func waitWithPredicate(predicate:NSPredicate, forElement:XCUIElement, needToTap:Bool, assertMessage:String)   {
+    func waitWithPredicate(predicate: NSPredicate, forElement: XCUIElement, needToTap: Bool, assertMessage: String) {
         expectation(for: predicate, evaluatedWith: forElement) { () -> Bool in
             if needToTap == true {
                 forElement.tap()
@@ -36,6 +33,6 @@ class UnitTestUtilities:XCTestCase {
             XCTAssertEqual(1, 1, assertMessage)
             return true
         }
-        waitForExpectations(timeout:90, handler: nil)
+        waitForExpectations(timeout: 90, handler: nil)
     }
 }

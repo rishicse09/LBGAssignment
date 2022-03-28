@@ -8,31 +8,26 @@
 import Foundation
 
 struct Constants {
-    
     struct MovieSearchString {
         static let VALID_STRING = "bollywood"
         static let INVALID_STRING = "jollywoodabcd"
     }
-    
     struct URLString {
         static let GET_MOVIE = "https://itunes.apple.com/search?media=music&term="
     }
-    
-    struct MovieCellTitles{
+    struct MovieCellTitles {
         static let TRACK_NAME = "Track Name:"
         static let ARTIST_NAME = "Artist Name:"
         static let GENRE = "Genre:"
     }
-    
-    struct AlertStrings{
-        struct Titles{
+    struct AlertStrings {
+        struct Titles {
             static let CONNECTION_ERROR_TITLE = "Connection Failed"
             static let DATA_ERROR_TITLE = "Unable To Retrieve Data"
             static let UNKNOWN_ERROR_TITLE = "Error Occured"
         }
-        struct ButtonTitles{
+        struct ButtonTitles {
             static let OK_TITLE = "Ok"
         }
     }
 }
-

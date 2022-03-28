@@ -7,8 +7,7 @@
 
 import Foundation
 import UIKit
-extension MoviesListViewController:MoviesViewModelDelegate {
-    
+extension MoviesListViewController: MoviesViewModelDelegate {
     func didReceiveMoviesData(movies: [MoviesModel]?, error: Error?) {
         defer {
             isRefreshing = false
@@ -29,15 +28,13 @@ extension MoviesListViewController:MoviesViewModelDelegate {
             }
         }
     }
-    
-    private func populateUIWithData(){
+    private func populateUIWithData() {
         moviesTableView.reloadData()
-        GetMovieListButton.isHidden = true
+        getMovieListButton.isHidden = true
         moviesTableView.isHidden = false
     }
-    
-    private func showErrorAlertForMovieList(error:Error?){
-        guard let err = error else { return  }
+    private func showErrorAlertForMovieList(error: Error?) {
+        guard let err = error else { return }
         if let customError = err as? CustomError {
             switch customError {
             case .connectionFailed:
@@ -45,7 +42,7 @@ extension MoviesListViewController:MoviesViewModelDelegate {
             case .dataError:
                 AlertHandler.showAlert(forMessage: customError.errorUserDescription, title: Constants.AlertStrings.Titles.CONNECTION_ERROR_TITLE, defaultButtonTitle: Constants.AlertStrings.ButtonTitles.OK_TITLE, sourceViewController: self)
             case .unexpected:
-                AlertHandler.showAlert(forMessage: customError.errorUserDescription, title: Constants.AlertStrings.Titles.CONNECTION_ERROR_TITLE, defaultButtonTitle: Constants.AlertStrings.ButtonTitles.OK_TITLE,sourceViewController: self)
+                AlertHandler.showAlert(forMessage: customError.errorUserDescription, title: Constants.AlertStrings.Titles.CONNECTION_ERROR_TITLE, defaultButtonTitle: Constants.AlertStrings.ButtonTitles.OK_TITLE, sourceViewController: self)
             }
         }
     }

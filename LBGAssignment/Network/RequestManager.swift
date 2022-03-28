@@ -7,27 +7,25 @@
 
 import Foundation
 
-enum ServiceRequestMethod:String {
+enum ServiceRequestMethod: String {
     case  getMovieList = "get_movie_list"
 }
 
-struct ServiceRequestUtility{
-    
-    func getURLStringForMethod(method:ServiceRequestMethod) -> String {
+struct ServiceRequestUtility {
+    func getURLStringForMethod(method: ServiceRequestMethod) -> String {
         switch method {
         case .getMovieList:
             return Constants.URLString.GET_MOVIE
         }
     }
-    
-    func getURLFromString(urlString:String) -> URL? {
+    func getURLFromString(urlString: String) -> URL? {
         guard let url = URL(string: urlString) else {
             return nil
         }
         return url
     }
 }
-enum DataRequestType:String {
-    case testData = "testData"
-    case actualData = "actualData"
+enum DataRequestType: String {
+    case testData = "test_Data"
+    case actualData = "actual_Data"
 }

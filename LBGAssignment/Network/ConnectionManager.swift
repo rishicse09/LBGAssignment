@@ -9,7 +9,6 @@ import Foundation
 struct ConnectionManager {
 
     static let shared = ConnectionManager()
-    
     /// This function is responsible to check network connectivity of device and returns Bool.
     ///
     /// ```
@@ -27,8 +26,7 @@ struct ConnectionManager {
             case .wifi, .cellular:
                 return true
             }
-        }
-        catch {
+        } catch {
             return false
         }
     }

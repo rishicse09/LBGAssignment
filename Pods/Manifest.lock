@@ -1,16 +1,20 @@
 PODS:
   - LazyImage (7.0.1)
+  - SwiftLint (0.47.0)
 
 DEPENDENCIES:
   - LazyImage
+  - SwiftLint (~> 0.47)
 
 SPEC REPOS:
   trunk:
     - LazyImage
+    - SwiftLint
 
 SPEC CHECKSUMS:
   LazyImage: 4db5288d8660b28e64e60c57f5b5d414af922160
+  SwiftLint: d41cc46a2ae58ac6d9f26954bc89f1d72e71fdef
 
-PODFILE CHECKSUM: 5fd5a8a59346077be7165bda05529c42080548ac
+PODFILE CHECKSUM: 9d714426143aac793894d1a07b78e137204243a7
 
 COCOAPODS: 1.11.3
