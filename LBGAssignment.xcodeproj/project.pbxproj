@@ -9,7 +9,7 @@
 /* Begin PBXBuildFile section */
 		210ECD3B27E340A300C0F799 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 210ECD3A27E340A300C0F799 /* AppDelegate.swift */; };
 		210ECD3D27E340A300C0F799 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 210ECD3C27E340A300C0F799 /* SceneDelegate.swift */; };
-		210ECD3F27E340A300C0F799 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 210ECD3E27E340A300C0F799 /* HomeViewController.swift */; };
+		210ECD3F27E340A300C0F799 /* MoviesListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 210ECD3E27E340A300C0F799 /* MoviesListViewController.swift */; };
 		210ECD4227E340A300C0F799 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 210ECD4027E340A300C0F799 /* Main.storyboard */; };
 		210ECD4427E340A400C0F799 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 210ECD4327E340A400C0F799 /* Assets.xcassets */; };
 		210ECD4727E340A400C0F799 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 210ECD4527E340A400C0F799 /* LaunchScreen.storyboard */; };
@@ -21,8 +21,8 @@
 		210ECD7827E5106100C0F799 /* ServiceRequestor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 210ECD7727E5106100C0F799 /* ServiceRequestor.swift */; };
 		210ECD7A27E5118500C0F799 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 210ECD7927E5118500C0F799 /* Constants.swift */; };
 		210ECD7C27E65A7A00C0F799 /* MoviesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 210ECD7B27E65A7A00C0F799 /* MoviesViewModel.swift */; };
-		210ECD8227E65E7B00C0F799 /* HomeViewControllerMoviesDelegateExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 210ECD8127E65E7B00C0F799 /* HomeViewControllerMoviesDelegateExtension.swift */; };
-		210ECD8427E65E9A00C0F799 /* HomeViewControllerTableViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 210ECD8327E65E9A00C0F799 /* HomeViewControllerTableViewExtension.swift */; };
+		210ECD8227E65E7B00C0F799 /* MoviesListViewControllerMoviesDelegateExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 210ECD8127E65E7B00C0F799 /* MoviesListViewControllerMoviesDelegateExtension.swift */; };
+		210ECD8427E65E9A00C0F799 /* MoviesListViewControllerTableViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 210ECD8327E65E9A00C0F799 /* MoviesListViewControllerTableViewExtension.swift */; };
 		210ECD8727E6702B00C0F799 /* MoviesTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 210ECD8527E6702B00C0F799 /* MoviesTableViewCell.swift */; };
 		210ECD8827E6702B00C0F799 /* MoviesTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 210ECD8627E6702B00C0F799 /* MoviesTableViewCell.xib */; };
 		210F0ECC27F1888000F22E5D /* MockMovieList_Empty.json in Resources */ = {isa = PBXBuildFile; fileRef = 210F0ECA27F1888000F22E5D /* MockMovieList_Empty.json */; };
@@ -65,7 +65,7 @@
 		210ECD3727E340A300C0F799 /* LBGAssignment.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LBGAssignment.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		210ECD3A27E340A300C0F799 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		210ECD3C27E340A300C0F799 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		210ECD3E27E340A300C0F799 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		210ECD3E27E340A300C0F799 /* MoviesListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoviesListViewController.swift; sourceTree = "<group>"; };
 		210ECD4127E340A300C0F799 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		210ECD4327E340A400C0F799 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		210ECD4627E340A400C0F799 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -80,8 +80,8 @@
 		210ECD7727E5106100C0F799 /* ServiceRequestor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceRequestor.swift; sourceTree = "<group>"; };
 		210ECD7927E5118500C0F799 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		210ECD7B27E65A7A00C0F799 /* MoviesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoviesViewModel.swift; sourceTree = "<group>"; };
-		210ECD8127E65E7B00C0F799 /* HomeViewControllerMoviesDelegateExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewControllerMoviesDelegateExtension.swift; sourceTree = "<group>"; };
-		210ECD8327E65E9A00C0F799 /* HomeViewControllerTableViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewControllerTableViewExtension.swift; sourceTree = "<group>"; };
+		210ECD8127E65E7B00C0F799 /* MoviesListViewControllerMoviesDelegateExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoviesListViewControllerMoviesDelegateExtension.swift; sourceTree = "<group>"; };
+		210ECD8327E65E9A00C0F799 /* MoviesListViewControllerTableViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoviesListViewControllerTableViewExtension.swift; sourceTree = "<group>"; };
 		210ECD8527E6702B00C0F799 /* MoviesTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoviesTableViewCell.swift; sourceTree = "<group>"; };
 		210ECD8627E6702B00C0F799 /* MoviesTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MoviesTableViewCell.xib; sourceTree = "<group>"; };
 		210F0ECA27F1888000F22E5D /* MockMovieList_Empty.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = MockMovieList_Empty.json; sourceTree = "<group>"; };
@@ -215,9 +215,9 @@
 		210ECD6E27E4FE4600C0F799 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				210ECD3E27E340A300C0F799 /* HomeViewController.swift */,
-				210ECD8127E65E7B00C0F799 /* HomeViewControllerMoviesDelegateExtension.swift */,
-				210ECD8327E65E9A00C0F799 /* HomeViewControllerTableViewExtension.swift */,
+				210ECD3E27E340A300C0F799 /* MoviesListViewController.swift */,
+				210ECD8127E65E7B00C0F799 /* MoviesListViewControllerMoviesDelegateExtension.swift */,
+				210ECD8327E65E9A00C0F799 /* MoviesListViewControllerTableViewExtension.swift */,
 				210ECD8527E6702B00C0F799 /* MoviesTableViewCell.swift */,
 				210ECD8627E6702B00C0F799 /* MoviesTableViewCell.xib */,
 			);
@@ -563,11 +563,11 @@
 				217E854427E8F1600035D68F /* CustomError.swift in Sources */,
 				210ECD7627E50B6200C0F799 /* MovieResponseModel.swift in Sources */,
 				217E854A27E904000035D68F /* AlertHandler.swift in Sources */,
-				210ECD3F27E340A300C0F799 /* HomeViewController.swift in Sources */,
+				210ECD3F27E340A300C0F799 /* MoviesListViewController.swift in Sources */,
 				210F0ED127F18FC500F22E5D /* RequestManager.swift in Sources */,
 				217E853E27E8E9A50035D68F /* ConnectionManager.swift in Sources */,
 				210ECD3B27E340A300C0F799 /* AppDelegate.swift in Sources */,
-				210ECD8227E65E7B00C0F799 /* HomeViewControllerMoviesDelegateExtension.swift in Sources */,
+				210ECD8227E65E7B00C0F799 /* MoviesListViewControllerMoviesDelegateExtension.swift in Sources */,
 				210ECD7A27E5118500C0F799 /* Constants.swift in Sources */,
 				210ECD8727E6702B00C0F799 /* MoviesTableViewCell.swift in Sources */,
 				217E854027E8E9FD0035D68F /* Reachability.swift in Sources */,
@@ -575,7 +575,7 @@
 				210ECD7827E5106100C0F799 /* ServiceRequestor.swift in Sources */,
 				210ECD3D27E340A300C0F799 /* SceneDelegate.swift in Sources */,
 				215F9B8427E8D5E700ACC044 /* DeviceUtility.swift in Sources */,
-				210ECD8427E65E9A00C0F799 /* HomeViewControllerTableViewExtension.swift in Sources */,
+				210ECD8427E65E9A00C0F799 /* MoviesListViewControllerTableViewExtension.swift in Sources */,
 				210ECD7C27E65A7A00C0F799 /* MoviesViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

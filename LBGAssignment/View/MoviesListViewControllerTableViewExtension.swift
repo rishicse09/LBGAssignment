@@ -1,5 +1,5 @@
 //
-//  ViewControllerTableViewExtension.swift
+//  MoviesListViewControllerTableViewExtension.swift
 //  LBGAssignment
 //
 //  Created by RishiChaurasia on 20/03/22.
@@ -9,7 +9,7 @@ import Foundation
 import UIKit
 
 fileprivate let MOVIES_CELL_IDENTIFIER = "moviesTableViewCell"
-extension HomeViewController:UITableViewDelegate, UITableViewDataSource {
+extension MoviesListViewController:UITableViewDelegate, UITableViewDataSource {
     
     //MARK: - UI Components Define
     func initialiseTableViewComponents() {

@@ -6,7 +6,7 @@
 //
 import UIKit
 
-class HomeViewController: UIViewController {
+class MoviesListViewController: UIViewController {
     var arrMovies = [MoviesModel]()
     var movieViewModel:MoviesViewModel = MoviesViewModel()
     let refreshControl = UIRefreshControl()

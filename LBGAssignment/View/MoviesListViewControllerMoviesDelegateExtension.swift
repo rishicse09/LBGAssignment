@@ -1,5 +1,5 @@
 //
-//  ViewControllerMoviesDelegateExtension.swift
+//  MoviesListViewControllerMoviesDelegateExtension.swift
 //  LBGAssignment
 //
 //  Created by RishiChaurasia on 20/03/22.
@@ -7,7 +7,7 @@
 
 import Foundation
 import UIKit
-extension HomeViewController:MoviesViewModelDelegate {
+extension MoviesListViewController:MoviesViewModelDelegate {
     
     func didReceiveMoviesData(movies: [MoviesModel]?, error: Error?) {
         defer {
