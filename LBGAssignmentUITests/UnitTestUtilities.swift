@@ -9,6 +9,10 @@ import Foundation
 import XCTest
 class UnitTestUtilities:XCTestCase {
     
+    func getLaunchArguement() -> String {
+        return "TestCasesExecution"
+    }
+    
     func waitForElement(forElement:XCUIElement, toShow:Bool, needToTap:Bool,assertMessage: String?) {
         let exists = NSPredicate(format: "exists == \(toShow)")
         var assertMsg = ""

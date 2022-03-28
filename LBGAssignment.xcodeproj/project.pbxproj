@@ -25,6 +25,10 @@
 		210ECD8427E65E9A00C0F799 /* HomeViewControllerTableViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 210ECD8327E65E9A00C0F799 /* HomeViewControllerTableViewExtension.swift */; };
 		210ECD8727E6702B00C0F799 /* MoviesTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 210ECD8527E6702B00C0F799 /* MoviesTableViewCell.swift */; };
 		210ECD8827E6702B00C0F799 /* MoviesTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 210ECD8627E6702B00C0F799 /* MoviesTableViewCell.xib */; };
+		210F0ECC27F1888000F22E5D /* MockMovieList_Empty.json in Resources */ = {isa = PBXBuildFile; fileRef = 210F0ECA27F1888000F22E5D /* MockMovieList_Empty.json */; };
+		210F0ECD27F1888000F22E5D /* MockMovieList_Full.json in Resources */ = {isa = PBXBuildFile; fileRef = 210F0ECB27F1888000F22E5D /* MockMovieList_Full.json */; };
+		210F0ECF27F1889500F22E5D /* MockDataRequestor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 210F0ECE27F1889500F22E5D /* MockDataRequestor.swift */; };
+		210F0ED127F18FC500F22E5D /* RequestManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 210F0ED027F18FC500F22E5D /* RequestManager.swift */; };
 		215F9B8027E8CDE700ACC044 /* JailBreakChecker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 215F9B7F27E8CDE700ACC044 /* JailBreakChecker.swift */; };
 		215F9B8427E8D5E700ACC044 /* DeviceUtility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 215F9B8327E8D5E700ACC044 /* DeviceUtility.swift */; };
 		217E853E27E8E9A50035D68F /* ConnectionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 217E853D27E8E9A50035D68F /* ConnectionManager.swift */; };
@@ -80,6 +84,10 @@
 		210ECD8327E65E9A00C0F799 /* HomeViewControllerTableViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewControllerTableViewExtension.swift; sourceTree = "<group>"; };
 		210ECD8527E6702B00C0F799 /* MoviesTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoviesTableViewCell.swift; sourceTree = "<group>"; };
 		210ECD8627E6702B00C0F799 /* MoviesTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MoviesTableViewCell.xib; sourceTree = "<group>"; };
+		210F0ECA27F1888000F22E5D /* MockMovieList_Empty.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = MockMovieList_Empty.json; sourceTree = "<group>"; };
+		210F0ECB27F1888000F22E5D /* MockMovieList_Full.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = MockMovieList_Full.json; sourceTree = "<group>"; };
+		210F0ECE27F1889500F22E5D /* MockDataRequestor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockDataRequestor.swift; sourceTree = "<group>"; };
+		210F0ED027F18FC500F22E5D /* RequestManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestManager.swift; sourceTree = "<group>"; };
 		215F9B7F27E8CDE700ACC044 /* JailBreakChecker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JailBreakChecker.swift; sourceTree = "<group>"; };
 		215F9B8327E8D5E700ACC044 /* DeviceUtility.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceUtility.swift; sourceTree = "<group>"; };
 		217E853D27E8E9A50035D68F /* ConnectionManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConnectionManager.swift; sourceTree = "<group>"; };
@@ -162,6 +170,7 @@
 		210ECD3927E340A300C0F799 /* LBGAssignment */ = {
 			isa = PBXGroup;
 			children = (
+				210F0EC827F187BE00F22E5D /* MockData */,
 				217E854827E903E60035D68F /* AlertHandler */,
 				217E854527E9036A0035D68F /* ErrorHandler */,
 				210ECD7127E4FE6300C0F799 /* Utility */,
@@ -230,6 +239,7 @@
 				217E853F27E8E9FD0035D68F /* Reachability.swift */,
 				210ECD7727E5106100C0F799 /* ServiceRequestor.swift */,
 				217E853D27E8E9A50035D68F /* ConnectionManager.swift */,
+				210F0ED027F18FC500F22E5D /* RequestManager.swift */,
 			);
 			path = Network;
 			sourceTree = "<group>";
@@ -242,6 +252,24 @@
 				215F9B8327E8D5E700ACC044 /* DeviceUtility.swift */,
 			);
 			path = Utility;
+			sourceTree = "<group>";
+		};
+		210F0EC827F187BE00F22E5D /* MockData */ = {
+			isa = PBXGroup;
+			children = (
+				210F0EC927F1886B00F22E5D /* Resources */,
+				210F0ECE27F1889500F22E5D /* MockDataRequestor.swift */,
+			);
+			path = MockData;
+			sourceTree = "<group>";
+		};
+		210F0EC927F1886B00F22E5D /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				210F0ECA27F1888000F22E5D /* MockMovieList_Empty.json */,
+				210F0ECB27F1888000F22E5D /* MockMovieList_Full.json */,
+			);
+			path = Resources;
 			sourceTree = "<group>";
 		};
 		217E854527E9036A0035D68F /* ErrorHandler */ = {
@@ -398,6 +426,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				210ECD4727E340A400C0F799 /* LaunchScreen.storyboard in Resources */,
+				210F0ECD27F1888000F22E5D /* MockMovieList_Full.json in Resources */,
+				210F0ECC27F1888000F22E5D /* MockMovieList_Empty.json in Resources */,
 				210ECD4427E340A400C0F799 /* Assets.xcassets in Resources */,
 				210ECD8827E6702B00C0F799 /* MoviesTableViewCell.xib in Resources */,
 				210ECD4227E340A300C0F799 /* Main.storyboard in Resources */,
@@ -528,11 +558,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				210F0ECF27F1889500F22E5D /* MockDataRequestor.swift in Sources */,
 				210ECD7327E50A4400C0F799 /* MoviesModel.swift in Sources */,
 				217E854427E8F1600035D68F /* CustomError.swift in Sources */,
 				210ECD7627E50B6200C0F799 /* MovieResponseModel.swift in Sources */,
 				217E854A27E904000035D68F /* AlertHandler.swift in Sources */,
 				210ECD3F27E340A300C0F799 /* HomeViewController.swift in Sources */,
+				210F0ED127F18FC500F22E5D /* RequestManager.swift in Sources */,
 				217E853E27E8E9A50035D68F /* ConnectionManager.swift in Sources */,
 				210ECD3B27E340A300C0F799 /* AppDelegate.swift in Sources */,
 				210ECD8227E65E7B00C0F799 /* HomeViewControllerMoviesDelegateExtension.swift in Sources */,

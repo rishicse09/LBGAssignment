@@ -32,16 +32,18 @@ class LBGAssignmentTests: XCTestCase {
             // Put the code you want to measure the time of here.
         }
     }
-
     
-    func testForMovieApiResultsWithCorrectURL() async throws{
-        let urlString = Constants.URL.GET_MOVIE
-        guard let urlRequest = getURLRequestForURL(urlString: urlString) else {
+    func testForMovieApiResultsWithCorrectURL() async throws {
+        let response =   try await ServiceRequestor().getMoviesList(method: .getMovieList, requestType: .testData, responseType: .success_with_result)//fetchAndParseMovieData(urlRequest: urlRequest)
+        guard let movies = response.movieModelArray else {
+            XCTAssertFalse(1==2, "Test case failed to fetch data with correct URL")
             return
         }
-        
-        let response =   try await ServiceRequestor().fetchAndParseMovieData(urlRequest: urlRequest)
-        
+        XCTAssertTrue(movies.count > 0, "Data recieved successfully")
+    }
+    
+    func testForMovieApiEmptyResultsWithCorrectURL() async throws{
+        let response =   try await ServiceRequestor().getMoviesList(method: .getMovieList, requestType: .testData, responseType: .success_with_empty_result)//fetchAndParseMovieData(urlRequest: urlRequest)
         guard let movies = response.movieModelArray else {
             XCTAssertFalse(1==2, "Test case failed to fetch data with correct URL")
             return
@@ -50,13 +52,7 @@ class LBGAssignmentTests: XCTestCase {
     }
     
     func testForMovieApiResultsWithInCorrectURL() async throws{
-        let urlString = "\(Constants.URL.GET_MOVIE)abcd" // abcd to destroy URL
-        guard let urlRequest = getURLRequestForURL(urlString: urlString) else {
-            return
-        }
-        
-        let response =   try await ServiceRequestor().fetchAndParseMovieData(urlRequest: urlRequest)
-        
+        let response =   try await ServiceRequestor().getMoviesList(method: .getMovieList, requestType: .testData, responseType: .failed_with_error)//fetchAndParseMovieData(urlRequest: urlRequest)
         guard let error = response.error else {
             XCTAssertFalse(1==2, "Test case failed to throw error with incorrect URL")
             return

@@ -18,8 +18,7 @@ struct MoviesViewModel {
         Task {
             do {
                 let serviceRequest = ServiceRequestor()
-                let responseData = try await serviceRequest.getMoviesList()
-                
+                let responseData = try await serviceRequest.getMoviesList(method: .getMovieList)
                 if let err = responseData.error {
                     delegate?.didReceiveMoviesData(movies: nil, error: err)
                 } else {
