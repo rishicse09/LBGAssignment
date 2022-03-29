@@ -57,6 +57,12 @@ class LBGAssignmentUITests: XCTestCase {
         XCTAssertTrue(alertTitle.exists, "no data alert shown")
         alert.buttons["Ok"].tap()
     }
+    func testToShowMovieDetail() {
+        waitForMovieList()
+        let app = XCUIApplication()
+        app.tables.cells.containing(.staticText, identifier: "Artist Name: Anamanaguchi").staticTexts["MovieNameLabel"].tap()
+        app.scrollViews.otherElements.staticTexts["Track Price Label"].tap()
+    }
     private func waitForMovieList() {
         let app = XCUIApplication()
         let getMovieButton =  app.buttons["Get Movie List"].staticTexts["Get Movie List"]

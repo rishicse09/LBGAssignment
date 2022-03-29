@@ -20,6 +20,14 @@ struct Constants {
         static let ARTIST_NAME = "Artist Name:"
         static let GENRE = "Genre:"
     }
+    struct MovieDetailViewTitles {
+        static let CENSORED_NAME = "Censored Name: "
+        static let COUNTRY = "Country: "
+        static let TRACK_NAME = "Track Name: "
+        static let ARTIST_NAME = "Artist Name: "
+        static let TRACK_PRICE = "Track Price: "
+        static let COLLECTION_PRICE = "Collection Price: "
+    }
     struct AlertStrings {
         struct Titles {
             static let CONNECTION_ERROR_TITLE = "Connection Failed"

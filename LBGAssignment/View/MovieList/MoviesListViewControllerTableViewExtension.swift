@@ -44,15 +44,22 @@ extension MoviesListViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         return createMoviesCell(tableView, cellForRowAt: indexPath)
     }
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        if let detailViewController = UtilityMethod.getViewControllerInstanceForMainStoryBoard(viewControllerId: "movieDetailViewController") as? MovieDetailViewController {
+            let selectedMovie = arrMovies[indexPath.row]
+            detailViewController.movieDetail = selectedMovie
+            self.navigationController?.pushViewController(detailViewController, animated: true)
+        }
+    }
     // MARK: - Custom UI Creation
     private func createMoviesCell (_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell: MoviesTableViewCell = tableView.dequeueReusableCell(withIdentifier: moviesCellIdentifier, for: indexPath) as?  MoviesTableViewCell else {
             return UITableViewCell()
         }
         let movieData = arrMovies[indexPath.row]
-        cell.lblTrackName.text = "\(Constants.MovieCellTitles.TRACK_NAME) \(movieData.trackName)"
-        cell.lblArtistName.text = "\(Constants.MovieCellTitles.ARTIST_NAME) \(movieData.artistName)"
-        cell.lblGenre.text = "\(Constants.MovieCellTitles.GENRE) \(movieData.primaryGenreName)"
+        cell.lblTrackName.text = "\(Constants.MovieCellTitles.TRACK_NAME) \(movieData.trackName ?? "")"
+        cell.lblArtistName.text = "\(Constants.MovieCellTitles.ARTIST_NAME) \(movieData.artistName ?? "")"
+        cell.lblGenre.text = "\(Constants.MovieCellTitles.GENRE) \(movieData.primaryGenreName ?? "")"
         cell.trackImage.imageURL = movieData.thumbnailURL
         return cell
     }

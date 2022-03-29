@@ -35,7 +35,8 @@ struct ServiceRequestor {
                                                     requestType: requestType,
                                                     responseType: responseType,
                                                     method: method)
-        } catch {
+        } catch let error {
+            debugPrint(error.localizedDescription)
             throw CustomError.unexpected
         }
     }
@@ -68,7 +69,8 @@ struct ServiceRequestor {
             for movie in results.results {
                 moviesArray.append(movie)
             }
-        } catch {
+        } catch let error {
+            debugPrint(error.localizedDescription)
             throw CustomError.unexpected
         }
         return moviesArray.count > 0 ? (moviesArray, nil) : (nil, CustomError.dataError)
@@ -103,7 +105,8 @@ struct ServiceRequestor {
                 }
                 return (serverData, nil)
             }
-        } catch {
+        } catch let error {
+            debugPrint(error.localizedDescription)
             return (nil, CustomError.unexpected)
         }
     }
