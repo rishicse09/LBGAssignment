@@ -22,7 +22,6 @@ class MovieDetailViewController: UIViewController {
         // Do any additional setup after loading the view.
         fillWithAutoFillData()
     }
-    
     /*
      // MARK: - Navigation
      
@@ -32,5 +31,4 @@ class MovieDetailViewController: UIViewController {
      // Pass the selected object to the new view controller.
      }
      */
-    
 }

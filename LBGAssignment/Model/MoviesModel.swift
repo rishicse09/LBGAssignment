@@ -51,7 +51,6 @@ struct MoviesModel: Codable {
         self.currency = currency
         self.trackPriceValue = trackPriceValue
         self.country = country
-       
     }
 }
 
