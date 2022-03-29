@@ -45,6 +45,7 @@ struct JailBreakChecker {
             return false
         }
     }
+
     static func canOpen(path: String) -> Bool {
         let file = fopen(path, "r")
         guard file != nil else { return false }

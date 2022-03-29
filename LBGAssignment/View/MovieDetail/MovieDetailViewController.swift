@@ -9,13 +9,13 @@ import UIKit
 import LazyImage
 
 class MovieDetailViewController: UIViewController {
-    @IBOutlet weak var headerLabel: UILabel!
-    @IBOutlet weak var movieImageView: LazyImageView!
-    @IBOutlet weak var subHeadingLabel: UILabel!
-    @IBOutlet weak var censoredNameLabel: UILabel!
-    @IBOutlet weak var countryLabel: UILabel!
-    @IBOutlet weak var collectionPriceLabel: UILabel!
-    @IBOutlet weak var trackPriceLabel: UILabel!
+    @IBOutlet private weak var headerLabel: UILabel!
+    @IBOutlet private weak var movieImageView: LazyImageView!
+    @IBOutlet private weak var subHeadingLabel: UILabel!
+    @IBOutlet private weak var censoredNameLabel: UILabel!
+    @IBOutlet private weak var countryLabel: UILabel!
+    @IBOutlet private weak var collectionPriceLabel: UILabel!
+    @IBOutlet private weak var trackPriceLabel: UILabel!
     var movieDetail: Movies?
 
     override func viewDidLoad() {
@@ -33,4 +33,45 @@ class MovieDetailViewController: UIViewController {
      // Pass the selected object to the new view controller.
      }
      */
+
+    // MARK: UI UPDATION
+
+   private func setMovieDetails() {
+        resetAllFields()
+        movieImageView.imageURL = movieDetail?.thumbnailURL
+        if let trackName = movieDetail?.trackName {
+            let attributedTrackName = UtilityMethod.getTitleAndTextAttributedString(titleString: Constants.MovieDetailViewTitles.TRACK_NAME, textString: trackName, fontSize: 24)
+            headerLabel.attributedText = attributedTrackName
+        }
+        if let artistName = movieDetail?.artistName {
+            let attributedArtistName = UtilityMethod.getTitleAndTextAttributedString(titleString: Constants.MovieDetailViewTitles.ARTIST_NAME, textString: artistName)
+            subHeadingLabel.attributedText = attributedArtistName
+        }
+        if let censoredNwme = movieDetail?.censoredName {
+            let attributedCensoredName = UtilityMethod.getTitleAndTextAttributedString(titleString: Constants.MovieDetailViewTitles.CENSORED_NAME, textString: censoredNwme)
+            censoredNameLabel.attributedText = attributedCensoredName
+        }
+        if let country = movieDetail?.country {
+            let attributedCountry = UtilityMethod.getTitleAndTextAttributedString(titleString: Constants.MovieDetailViewTitles.COUNTRY, textString: country)
+            countryLabel.attributedText = attributedCountry
+        }
+        if let trackPrice = movieDetail?.trackPrice {
+            let attributedTrackPrice = UtilityMethod.getTitleAndTextAttributedString(titleString: Constants.MovieDetailViewTitles.TRACK_PRICE, textString: trackPrice)
+            trackPriceLabel.attributedText = attributedTrackPrice
+        }
+        if let collectionPrice = movieDetail?.collectionPrice {
+            let attributedCollectionPrice = UtilityMethod.getTitleAndTextAttributedString(titleString: Constants.MovieDetailViewTitles.COLLECTION_PRICE, textString: collectionPrice)
+            collectionPriceLabel.attributedText = attributedCollectionPrice
+        }
+    }
+
+    private func resetAllFields() {
+        headerLabel.text =  ""
+        subHeadingLabel.text = ""
+        movieImageView.image = nil
+        censoredNameLabel.text =  ""
+        countryLabel.text = ""
+        trackPriceLabel.text = ""
+        collectionPriceLabel.text = ""
+    }
 }

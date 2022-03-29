@@ -9,6 +9,7 @@ import Foundation
 import UIKit
 
 struct DeviceUtility {
+
     static func isRunningOnSimulator() -> Bool {
 #if targetEnvironment(simulator)
         return true

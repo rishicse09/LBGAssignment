@@ -21,4 +21,11 @@ class MoviesTableViewCell: UITableViewCell {
         super.setSelected(selected, animated: animated)
         // Configure the view for the selected state
     }
+
+    func setupData(movieData: Movies) {
+        lblTrackName.text = "\(Constants.MovieCellTitles.TRACK_NAME) \(movieData.trackName ?? "")"
+        lblArtistName.text = "\(Constants.MovieCellTitles.ARTIST_NAME) \(movieData.artistName ?? "")"
+        lblGenre.text = "\(Constants.MovieCellTitles.GENRE) \(movieData.primaryGenreName ?? "")"
+        trackImage.imageURL = movieData.thumbnailURL
+    }
 }

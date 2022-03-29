@@ -24,6 +24,7 @@ protocol MockDataRequestorProtocol {
 }
 
 class MockDataRequestor: MockDataRequestorProtocol {
+
     func getMockDataResponse(responseType: MockDataResponseType?, method: ServiceRequestMethod?) -> Data? {
         guard let responseType = responseType, let method = method else { return nil }
         switch method {
@@ -32,6 +33,7 @@ class MockDataRequestor: MockDataRequestorProtocol {
             return getMockDataResponseMovies(responseType: responseType)
         }
     }
+
     private func getMockDataResponseMovies(responseType: MockDataResponseType) -> Data? {
         switch responseType {
         case .successWithResult:
@@ -48,12 +50,14 @@ class MockDataRequestor: MockDataRequestorProtocol {
         }
         return nil
     }
+
     private func getStubDataFromFile(fileName: String) -> Data? {
         guard let jsonData = readFile(forName: fileName) else {
             return nil
         }
         return jsonData
     }
+
     private func readFile(forName name: String) -> Data? {
         do {
             if let bundlePath = Bundle.main.path(forResource: name, ofType: "json"),

@@ -13,6 +13,7 @@ protocol MoviesViewModelDelegate {
 
 struct MoviesViewModel {
     var delegate: MoviesViewModelDelegate?
+
     func getMovieListWithSearchString(searchString: String) {
         Task {
             do {

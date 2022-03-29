@@ -8,8 +8,8 @@
 import Foundation
 
 struct Constants {
-    struct ViewControllerIdentifiers{
-        static let MOVIE_DETAIL_VIEW_CONTROLLER = "movieDetailViewController"
+    struct ViewControllerIdentifiers {
+        static let movieDetailViewController = "movieDetailViewController"
     }
     struct MovieSearchString {
         static let VALID_STRING = "bollywood"

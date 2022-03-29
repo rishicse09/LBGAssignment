@@ -18,6 +18,7 @@ struct Movies: Codable {
     var trackPriceValue: Double?
     var currency: String?
     var country: String?
+
     private enum CodingKeys: String, CodingKey {
         case artistName
         case trackName
@@ -33,12 +34,14 @@ struct Movies: Codable {
 }
 
 extension Movies {
+
     var collectionPrice: String {
         if let currency = currency, let price = collectionPriceValue {
             return "\(String(price)) \(currency)"
         }
         return ""
     }
+
     var trackPrice: String {
         if let currency = currency, let price = trackPriceValue {
             return "\(String(price)) \(currency)"

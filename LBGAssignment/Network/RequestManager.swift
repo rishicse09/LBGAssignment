@@ -18,6 +18,7 @@ struct ServiceRequestUtility {
             return Constants.URLString.GET_MOVIE
         }
     }
+
     func getURLFromString(urlString: String) -> URL? {
         guard let url = URL(string: urlString) else {
             return nil
@@ -25,6 +26,7 @@ struct ServiceRequestUtility {
         return url
     }
 }
+
 enum DataRequestType: String {
     case testData = "test_Data"
     case actualData = "actual_Data"
