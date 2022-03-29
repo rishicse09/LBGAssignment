@@ -30,11 +30,11 @@ class MoviesListViewController: UIViewController {
 
     // MARK: - Event Handlers
     @IBAction private func getMovieListButtonTapped(_ sender: Any) {
-        fetchMovieListWithSearchString(searchString: Constants.MovieSearchString.VALID_STRING)
+        fetchMovieListWithSearchString(searchString: Constants.MovieSearchString.validString)
     }
 
     @IBAction private func getEmptyMovieListButtonTapped(_ sender: Any) {
-        fetchMovieListWithSearchString(searchString: Constants.MovieSearchString.INVALID_STRING)
+        fetchMovieListWithSearchString(searchString: Constants.MovieSearchString.invalidString)
     }
 }
 
@@ -68,11 +68,11 @@ extension MoviesListViewController: MoviesViewModelDelegate {
         if let customError = err as? CustomError {
             switch customError {
             case .connectionFailed:
-                AlertHandler.showAlert(forMessage: customError.errorMessage, title: Constants.AlertStrings.Titles.CONNECTION_ERROR_TITLE, defaultButtonTitle: Constants.AlertStrings.ButtonTitles.OK_TITLE, sourceViewController: self)
+                AlertHandler.showAlert(forMessage: customError.errorMessage, title: Constants.AlertStrings.Titles.connectionErrorTitle, defaultButtonTitle: Constants.AlertStrings.ButtonTitles.okTitle, sourceViewController: self)
             case .dataError:
-                AlertHandler.showAlert(forMessage: customError.errorMessage, title: Constants.AlertStrings.Titles.CONNECTION_ERROR_TITLE, defaultButtonTitle: Constants.AlertStrings.ButtonTitles.OK_TITLE, sourceViewController: self)
+                AlertHandler.showAlert(forMessage: customError.errorMessage, title: Constants.AlertStrings.Titles.connectionErrorTitle, defaultButtonTitle: Constants.AlertStrings.ButtonTitles.okTitle, sourceViewController: self)
             case .unexpected:
-                AlertHandler.showAlert(forMessage: customError.errorMessage, title: Constants.AlertStrings.Titles.CONNECTION_ERROR_TITLE, defaultButtonTitle: Constants.AlertStrings.ButtonTitles.OK_TITLE, sourceViewController: self)
+                AlertHandler.showAlert(forMessage: customError.errorMessage, title: Constants.AlertStrings.Titles.connectionErrorTitle, defaultButtonTitle: Constants.AlertStrings.ButtonTitles.okTitle, sourceViewController: self)
             }
         }
     }
@@ -106,7 +106,7 @@ extension MoviesListViewController: UITableViewDelegate, UITableViewDataSource {
             return
         }
         isRefreshing = true
-        fetchMovieListWithSearchString(searchString: Constants.MovieSearchString.VALID_STRING)
+        fetchMovieListWithSearchString(searchString: Constants.MovieSearchString.validString)
         refreshControl.endRefreshing()
     }
 

@@ -23,9 +23,9 @@ class MoviesTableViewCell: UITableViewCell {
     }
 
     func setupData(movieData: Movies) {
-        lblTrackName.text = "\(Constants.MovieCellTitles.TRACK_NAME) \(movieData.trackName ?? "")"
-        lblArtistName.text = "\(Constants.MovieCellTitles.ARTIST_NAME) \(movieData.artistName ?? "")"
-        lblGenre.text = "\(Constants.MovieCellTitles.GENRE) \(movieData.primaryGenreName ?? "")"
+        lblTrackName.text = "\(Constants.MovieCellTitles.trackName) \(movieData.trackName ?? "")"
+        lblArtistName.text = "\(Constants.MovieCellTitles.atistName) \(movieData.artistName ?? "")"
+        lblGenre.text = "\(Constants.MovieCellTitles.genre) \(movieData.primaryGenreName ?? "")"
         trackImage.imageURL = movieData.thumbnailURL
     }
 }

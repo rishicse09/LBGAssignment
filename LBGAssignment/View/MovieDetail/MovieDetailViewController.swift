@@ -40,27 +40,27 @@ class MovieDetailViewController: UIViewController {
         resetAllFields()
         movieImageView.imageURL = movieDetail?.thumbnailURL
         if let trackName = movieDetail?.trackName {
-            let attributedTrackName = UtilityMethod.getTitleAndTextAttributedString(titleString: Constants.MovieDetailViewTitles.TRACK_NAME, textString: trackName, fontSize: 24)
+            let attributedTrackName = UtilityMethod.getTitleAndTextAttributedString(titleString: Constants.MovieDetailViewTitles.trackName, textString: trackName, fontSize: 24)
             headerLabel.attributedText = attributedTrackName
         }
         if let artistName = movieDetail?.artistName {
-            let attributedArtistName = UtilityMethod.getTitleAndTextAttributedString(titleString: Constants.MovieDetailViewTitles.ARTIST_NAME, textString: artistName)
+            let attributedArtistName = UtilityMethod.getTitleAndTextAttributedString(titleString: Constants.MovieDetailViewTitles.artistName, textString: artistName)
             subHeadingLabel.attributedText = attributedArtistName
         }
         if let censoredNwme = movieDetail?.censoredName {
-            let attributedCensoredName = UtilityMethod.getTitleAndTextAttributedString(titleString: Constants.MovieDetailViewTitles.CENSORED_NAME, textString: censoredNwme)
+            let attributedCensoredName = UtilityMethod.getTitleAndTextAttributedString(titleString: Constants.MovieDetailViewTitles.censoredName, textString: censoredNwme)
             censoredNameLabel.attributedText = attributedCensoredName
         }
         if let country = movieDetail?.country {
-            let attributedCountry = UtilityMethod.getTitleAndTextAttributedString(titleString: Constants.MovieDetailViewTitles.COUNTRY, textString: country)
+            let attributedCountry = UtilityMethod.getTitleAndTextAttributedString(titleString: Constants.MovieDetailViewTitles.country, textString: country)
             countryLabel.attributedText = attributedCountry
         }
         if let trackPrice = movieDetail?.trackPrice {
-            let attributedTrackPrice = UtilityMethod.getTitleAndTextAttributedString(titleString: Constants.MovieDetailViewTitles.TRACK_PRICE, textString: trackPrice)
+            let attributedTrackPrice = UtilityMethod.getTitleAndTextAttributedString(titleString: Constants.MovieDetailViewTitles.trackPrice, textString: trackPrice)
             trackPriceLabel.attributedText = attributedTrackPrice
         }
         if let collectionPrice = movieDetail?.collectionPrice {
-            let attributedCollectionPrice = UtilityMethod.getTitleAndTextAttributedString(titleString: Constants.MovieDetailViewTitles.COLLECTION_PRICE, textString: collectionPrice)
+            let attributedCollectionPrice = UtilityMethod.getTitleAndTextAttributedString(titleString: Constants.MovieDetailViewTitles.collectionPrice, textString: collectionPrice)
             collectionPriceLabel.attributedText = attributedCollectionPrice
         }
     }

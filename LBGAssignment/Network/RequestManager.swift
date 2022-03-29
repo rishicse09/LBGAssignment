@@ -15,7 +15,7 @@ struct ServiceRequestUtility {
     func getURLStringForMethod(method: ServiceRequestMethod) -> String {
         switch method {
         case .getMovieList:
-            return Constants.URLString.GET_MOVIE
+            return Constants.URLString.getMovie
         }
     }
 

@@ -18,7 +18,7 @@ class LBGAssignmentTests: XCTestCase {
     }
 
     func testForMovieApiResultsWithCorrectURL() async throws {
-        let result =  try await ServiceRequestor().getMoviesList(searchString: Constants.MovieSearchString.VALID_STRING,
+        let result =  try await ServiceRequestor().getMoviesList(searchString: Constants.MovieSearchString.validString,
                                                                  method: .getMovieList,
                                                                  requestType: .testData,
                                                                  responseType: .successWithResult)
@@ -30,7 +30,7 @@ class LBGAssignmentTests: XCTestCase {
     }
     func testForMovieApiEmptyResultsWithCorrectURL() async throws {
         let result =  try await ServiceRequestor().getMoviesList(
-            searchString: Constants.MovieSearchString.INVALID_STRING,
+            searchString: Constants.MovieSearchString.invalidString,
             method: .getMovieList,
             requestType: .testData,
             responseType: .successWithEmptyResult)
@@ -42,7 +42,7 @@ class LBGAssignmentTests: XCTestCase {
     }
     func testForMovieApiResultsWithInCorrectURL() async throws {
         let response =   try await ServiceRequestor().getMoviesList(
-            searchString: Constants.MovieSearchString.INVALID_STRING,
+            searchString: Constants.MovieSearchString.invalidString,
             method: .getMovieList,
             requestType: .testData,
             responseType: .failedWithError)

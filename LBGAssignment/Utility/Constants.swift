@@ -12,33 +12,33 @@ struct Constants {
         static let movieDetailViewController = "movieDetailViewController"
     }
     struct MovieSearchString {
-        static let VALID_STRING = "bollywood"
-        static let INVALID_STRING = "jollywoodabcd"
+        static let validString = "bollywood"
+        static let invalidString = "jollywoodabcd"
     }
     struct URLString {
-        static let GET_MOVIE = "https://itunes.apple.com/search?media=music&term="
+        static let getMovie = "https://itunes.apple.com/search?media=music&term="
     }
     struct MovieCellTitles {
-        static let TRACK_NAME = "Track Name:"
-        static let ARTIST_NAME = "Artist Name:"
-        static let GENRE = "Genre:"
+        static let trackName = "Track Name:"
+        static let atistName = "Artist Name:"
+        static let genre = "Genre:"
     }
     struct MovieDetailViewTitles {
-        static let CENSORED_NAME = "Censored Name: "
-        static let COUNTRY = "Country: "
-        static let TRACK_NAME = "Track Name: "
-        static let ARTIST_NAME = "Artist Name: "
-        static let TRACK_PRICE = "Track Price: "
-        static let COLLECTION_PRICE = "Collection Price: "
+        static let censoredName = "Censored Name: "
+        static let country = "Country: "
+        static let trackName = "Track Name: "
+        static let artistName = "Artist Name: "
+        static let trackPrice = "Track Price: "
+        static let collectionPrice = "Collection Price: "
     }
     struct AlertStrings {
         struct Titles {
-            static let CONNECTION_ERROR_TITLE = "Connection Failed"
-            static let DATA_ERROR_TITLE = "Unable To Retrieve Data"
-            static let UNKNOWN_ERROR_TITLE = "Error Occured"
+            static let connectionErrorTitle = "Connection Failed"
+            static let dataErrorTitle = "Unable To Retrieve Data"
+            static let unknownErrorTitle = "Error Occured"
         }
         struct ButtonTitles {
-            static let OK_TITLE = "Ok"
+            static let okTitle = "Ok"
         }
     }
 }
