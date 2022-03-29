@@ -16,12 +16,14 @@ class MovieDetailViewController: UIViewController {
     @IBOutlet weak var countryLabel: UILabel!
     @IBOutlet weak var collectionPriceLabel: UILabel!
     @IBOutlet weak var trackPriceLabel: UILabel!
-    var movieDetail: MoviesModel?
+    var movieDetail: Movies?
+
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
-        fillWithAutoFillData()
+        setMovieDetails()
     }
+
     /*
      // MARK: - Navigation
      

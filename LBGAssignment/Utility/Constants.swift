@@ -8,6 +8,9 @@
 import Foundation
 
 struct Constants {
+    struct ViewControllerIdentifiers{
+        static let MOVIE_DETAIL_VIEW_CONTROLLER = "movieDetailViewController"
+    }
     struct MovieSearchString {
         static let VALID_STRING = "bollywood"
         static let INVALID_STRING = "jollywoodabcd"

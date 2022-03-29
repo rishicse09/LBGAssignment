@@ -7,7 +7,8 @@
 
 import Foundation
 extension MovieDetailViewController {
-    func fillWithAutoFillData() {
+
+    func setMovieDetails() {
         resetAllFields()
         movieImageView.imageURL = movieDetail?.thumbnailURL
         if let trackName = movieDetail?.trackName {
@@ -35,6 +36,7 @@ extension MovieDetailViewController {
             collectionPriceLabel.attributedText = attributedCollectionPrice
         }
     }
+
     private func resetAllFields() {
         headerLabel.text =  ""
         subHeadingLabel.text = ""

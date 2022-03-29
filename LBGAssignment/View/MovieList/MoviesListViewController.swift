@@ -7,12 +7,13 @@
 import UIKit
 
 class MoviesListViewController: UIViewController {
-    var arrMovies = [MoviesModel]()
+    var arrMovies = [Movies]()
     private var movieViewModel: MoviesViewModel = MoviesViewModel()
     let refreshControl = UIRefreshControl()
     var isRefreshing = false
-    @IBOutlet weak var getMovieListButton: UIButton!
+    @IBOutlet weak var optionsStackView: UIStackView!
     @IBOutlet weak var moviesTableView: UITableView!
+
     // MARK: - View Controller Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -20,18 +21,18 @@ class MoviesListViewController: UIViewController {
         initialiseTableViewComponents()
         movieViewModel.delegate = self
     }
+
     // MARK: - Business Logic
     func fetchMovieListWithSearchString(searchString: String) {
         movieViewModel.getMovieListWithSearchString(searchString: searchString)
     }
+
     // MARK: - Event Handlers
-    @IBAction private func getMovieListButton_tapped(_ sender: Any) {
+    @IBAction private func getMovieListButtonTapped(_ sender: Any) {
         fetchMovieListWithSearchString(searchString: Constants.MovieSearchString.VALID_STRING)
     }
-    @IBAction private func getEmptyMovieListButton_tapped(_ sender: Any) {
+
+    @IBAction private func getEmptyMovieListButtonTapped(_ sender: Any) {
         fetchMovieListWithSearchString(searchString: Constants.MovieSearchString.INVALID_STRING)
-    }
-    @IBAction private func getErrorMovieListButton_tapped(_ sender: Any) {
-        //        fetchMovieListWithSearchString(searchString:Constants.MovieSearchString.INVALID_STRING)
     }
 }

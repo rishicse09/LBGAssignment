@@ -8,7 +8,7 @@
 import Foundation
 
 protocol MoviesViewModelDelegate {
-    func didReceiveMoviesData(movies: [MoviesModel]?, error: Error?)
+    func didReceiveMoviesData(movies: [Movies]?, error: Error?)
 }
 
 struct MoviesViewModel {

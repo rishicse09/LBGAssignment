@@ -65,7 +65,4 @@ class MockDataRequestor: MockDataRequestorProtocol {
         }
         return nil
     }
-    class func getUITestingArguement() -> String {
-        return "testMode"
-    }
 }

@@ -22,7 +22,7 @@ struct ServiceRequestor {
     func getMoviesList(searchString: String,
                        method: ServiceRequestMethod,
                        requestType: DataRequestType? = nil,
-                       responseType: MockDataResponseType? = nil) async throws -> (movieModelArray: [MoviesModel]?, error: Error?) {
+                       responseType: MockDataResponseType? = nil) async throws -> (movieModelArray: [Movies]?, error: Error?) {
         var urlString = ServiceRequestUtility().getURLStringForMethod(method: method)
         urlString = "\(urlString)\(searchString)"
         guard let url = ServiceRequestUtility().getURLFromString(urlString: urlString) else {
@@ -55,8 +55,8 @@ struct ServiceRequestor {
     private func fetchAndParseMovieData(urlRequest: URLRequest,
                                         requestType: DataRequestType? = nil,
                                         responseType: MockDataResponseType? = nil,
-                                        method: ServiceRequestMethod? = nil) async throws -> (movieModelArray: [MoviesModel]?, error: Error?) {
-        var moviesArray = [MoviesModel]()
+                                        method: ServiceRequestMethod? = nil) async throws -> (movieModelArray: [Movies]?, error: Error?) {
+        var moviesArray = [Movies]()
         do {
             let response =  try await initiateServiceRequest(request: urlRequest,
                                                              requestType: requestType,
@@ -65,7 +65,7 @@ struct ServiceRequestor {
             guard let responseData = response.responseData else {
                 return (nil, response.serviceError)
             }
-            let results  =  try JSONDecoder().decode(MovieResponseModel.self, from: responseData)
+            let results  =  try JSONDecoder().decode(MovieResponse.self, from: responseData)
             for movie in results.results {
                 moviesArray.append(movie)
             }

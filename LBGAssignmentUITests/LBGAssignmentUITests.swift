@@ -19,14 +19,7 @@ class LBGAssignmentUITests: XCTestCase {
     override func tearDownWithError() throws {
         // Put teardown code here. This method is called after the invocation of each test method in the class.
     }
-    func testLaunchPerformance() throws {
-        if #available(macOS 10.15, iOS 13.0, tvOS 13.0, watchOS 7.0, *) {
-            // This measures how long it takes to launch your application.
-            measure(metrics: [XCTApplicationLaunchMetric()]) {
-                XCUIApplication().launch()
-            }
-        }
-    }
+
     func testMovieListNotLoaded() {
         let app = XCUIApplication()
         let getMovieButton = app.staticTexts["Get Movie List"]
@@ -61,7 +54,7 @@ class LBGAssignmentUITests: XCTestCase {
         waitForMovieList()
         let app = XCUIApplication()
         app.tables.cells.containing(.staticText, identifier: "Artist Name: Anamanaguchi").staticTexts["MovieNameLabel"].tap()
-        app.scrollViews.otherElements.staticTexts["Track Price Label"].tap()
+        app.scrollViews.otherElements.staticTexts["Track Price Label"]
     }
     private func waitForMovieList() {
         let app = XCUIApplication()

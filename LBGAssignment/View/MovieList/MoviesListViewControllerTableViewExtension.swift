@@ -37,20 +37,24 @@ extension MoviesListViewController: UITableViewDelegate, UITableViewDataSource {
         fetchMovieListWithSearchString(searchString: Constants.MovieSearchString.VALID_STRING)
         refreshControl.endRefreshing()
     }
+
     // MARK: - UITableViewDelegate
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return arrMovies.count
     }
+
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         return createMoviesCell(tableView, cellForRowAt: indexPath)
     }
+
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        if let detailViewController = UtilityMethod.getViewControllerInstanceForMainStoryBoard(viewControllerId: "movieDetailViewController") as? MovieDetailViewController {
+        if let detailViewController = UtilityMethod.getViewControllerInstanceForMainStoryBoard(viewControllerId: Constants.ViewControllerIdentifiers.MOVIE_DETAIL_VIEW_CONTROLLER) as? MovieDetailViewController {
             let selectedMovie = arrMovies[indexPath.row]
             detailViewController.movieDetail = selectedMovie
             self.navigationController?.pushViewController(detailViewController, animated: true)
         }
     }
+
     // MARK: - Custom UI Creation
     private func createMoviesCell (_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell: MoviesTableViewCell = tableView.dequeueReusableCell(withIdentifier: moviesCellIdentifier, for: indexPath) as?  MoviesTableViewCell else {

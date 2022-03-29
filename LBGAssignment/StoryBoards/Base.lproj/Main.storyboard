@@ -34,33 +34,21 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="jsF-1u-ZlG">
-                                <rect key="frame" x="31" y="400" width="352" height="150"/>
+                                <rect key="frame" x="31" y="425" width="352" height="100"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4To-lX-yV6">
-                                        <rect key="frame" x="0.0" y="0.0" width="352" height="50"/>
-                                        <accessibility key="accessibilityConfiguration" identifier="Get Error List Button" label="Get Error List Button"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="50" id="GlV-WI-jqj"/>
-                                        </constraints>
-                                        <state key="normal" title="Button"/>
-                                        <buttonConfiguration key="configuration" style="plain" title="Get Error while fetching list"/>
-                                        <connections>
-                                            <action selector="getErrorMovieListButton_tapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="SHo-hi-lPB"/>
-                                        </connections>
-                                    </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mbc-7R-J8n">
-                                        <rect key="frame" x="0.0" y="50" width="352" height="50"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="352" height="50"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="50" id="Dv5-6L-Jzd"/>
                                         </constraints>
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="plain" title="Get Movie List"/>
                                         <connections>
-                                            <action selector="getMovieListButton_tapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="rlb-sa-Two"/>
+                                            <action selector="getMovieListButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Tnd-KR-IKj"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zbV-SC-y1T">
-                                        <rect key="frame" x="0.0" y="100" width="352" height="50"/>
+                                        <rect key="frame" x="0.0" y="50" width="352" height="50"/>
                                         <accessibility key="accessibilityConfiguration" identifier="Get Empty List Button" label="Get Empty List Button"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="50" id="TN7-ZJ-QdX"/>
@@ -68,7 +56,7 @@
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="plain" title="Get Empty List"/>
                                         <connections>
-                                            <action selector="getEmptyMovieListButton_tapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="qYu-Ol-jc3"/>
+                                            <action selector="getEmptyMovieListButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="bI5-Xe-s3d"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -96,8 +84,8 @@
                     </view>
                     <navigationItem key="navigationItem" title="Movies" id="eIn-uQ-wxO"/>
                     <connections>
-                        <outlet property="getMovieListButton" destination="mbc-7R-J8n" id="hdI-fa-1JH"/>
                         <outlet property="moviesTableView" destination="JU1-xj-CoK" id="R3K-1D-7eN"/>
+                        <outlet property="optionsStackView" destination="jsF-1u-ZlG" id="Drj-lv-Cwb"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
