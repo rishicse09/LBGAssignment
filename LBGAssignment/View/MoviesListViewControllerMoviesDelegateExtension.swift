@@ -38,11 +38,11 @@ extension MoviesListViewController: MoviesViewModelDelegate {
         if let customError = err as? CustomError {
             switch customError {
             case .connectionFailed:
-                AlertHandler.showAlert(forMessage: customError.errorUserDescription, title: Constants.AlertStrings.Titles.CONNECTION_ERROR_TITLE, defaultButtonTitle: Constants.AlertStrings.ButtonTitles.OK_TITLE, sourceViewController: self)
+                AlertHandler.showAlert(forMessage: customError.errorMessage, title: Constants.AlertStrings.Titles.CONNECTION_ERROR_TITLE, defaultButtonTitle: Constants.AlertStrings.ButtonTitles.OK_TITLE, sourceViewController: self)
             case .dataError:
-                AlertHandler.showAlert(forMessage: customError.errorUserDescription, title: Constants.AlertStrings.Titles.CONNECTION_ERROR_TITLE, defaultButtonTitle: Constants.AlertStrings.ButtonTitles.OK_TITLE, sourceViewController: self)
+                AlertHandler.showAlert(forMessage: customError.errorMessage, title: Constants.AlertStrings.Titles.CONNECTION_ERROR_TITLE, defaultButtonTitle: Constants.AlertStrings.ButtonTitles.OK_TITLE, sourceViewController: self)
             case .unexpected:
-                AlertHandler.showAlert(forMessage: customError.errorUserDescription, title: Constants.AlertStrings.Titles.CONNECTION_ERROR_TITLE, defaultButtonTitle: Constants.AlertStrings.ButtonTitles.OK_TITLE, sourceViewController: self)
+                AlertHandler.showAlert(forMessage: customError.errorMessage, title: Constants.AlertStrings.Titles.CONNECTION_ERROR_TITLE, defaultButtonTitle: Constants.AlertStrings.ButtonTitles.OK_TITLE, sourceViewController: self)
             }
         }
     }

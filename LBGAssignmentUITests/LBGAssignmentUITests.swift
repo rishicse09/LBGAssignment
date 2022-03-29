@@ -29,7 +29,7 @@ class LBGAssignmentUITests: XCTestCase {
     }
     func testMovieListNotLoaded() {
         let app = XCUIApplication()
-       let getMovieButton = app.staticTexts["Get Movie List"]
+        let getMovieButton = app.staticTexts["Get Movie List"]
         UnitTestUtilities().waitForElement(element: getMovieButton, toShow: true, needToTap: false, assertMessage: nil)
         XCTAssertTrue(getMovieButton.isHittable, "Get Movie List button is visible")
         let tableCell = app.tables.children(matching: .cell).element(boundBy: 0).staticTexts["MovieNameLabel"]

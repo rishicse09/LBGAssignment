@@ -28,7 +28,7 @@ class MockDataRequestor: MockDataRequestorProtocol {
         guard let responseType = responseType, let method = method else { return nil }
         switch method {
         case .getMovieList:
-           debugPrint("movie list")
+            debugPrint("movie list")
             return getMockDataResponseMovies(responseType: responseType)
         }
     }
@@ -48,11 +48,11 @@ class MockDataRequestor: MockDataRequestorProtocol {
         }
         return nil
     }
-   private func getStubDataFromFile(fileName: String) -> Data? {
-       guard let jsonData = readFile(forName: fileName) else {
-           return nil
-       }
-       return jsonData
+    private func getStubDataFromFile(fileName: String) -> Data? {
+        guard let jsonData = readFile(forName: fileName) else {
+            return nil
+        }
+        return jsonData
     }
     private func readFile(forName name: String) -> Data? {
         do {

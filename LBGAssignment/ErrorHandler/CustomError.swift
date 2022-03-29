@@ -15,7 +15,7 @@ enum CustomError: Error {
 }
 
 extension CustomError: LocalizedError {
-    public var errorUserDescription: String {
+    public var errorMessage: String {
         switch self {
         case .connectionFailed:
             return NSLocalizedString(
