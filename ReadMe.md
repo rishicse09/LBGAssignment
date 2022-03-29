@@ -42,8 +42,6 @@ Steps to Install pods:
 ![image](https://user-images.githubusercontent.com/61456703/160667490-36222690-89fd-46ff-92f4-c5b6d8fd1d9b.png)
 
 
-## Installation
-No Installation required.
 
 ## Development
 
