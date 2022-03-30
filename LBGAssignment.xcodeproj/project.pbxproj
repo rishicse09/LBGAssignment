@@ -28,7 +28,6 @@
 		210F0ED127F18FC500F22E5D /* RequestManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 210F0ED027F18FC500F22E5D /* RequestManager.swift */; };
 		2115EFAF27F2D71E00204103 /* MovieDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2115EFAE27F2D71E00204103 /* MovieDetailViewController.swift */; };
 		2115EFB127F2E17100204103 /* UtilityMethod.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2115EFB027F2E17100204103 /* UtilityMethod.swift */; };
-		215F9B8027E8CDE700ACC044 /* JailBreakChecker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 215F9B7F27E8CDE700ACC044 /* JailBreakChecker.swift */; };
 		215F9B8427E8D5E700ACC044 /* DeviceUtility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 215F9B8327E8D5E700ACC044 /* DeviceUtility.swift */; };
 		217E853E27E8E9A50035D68F /* ConnectionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 217E853D27E8E9A50035D68F /* ConnectionManager.swift */; };
 		217E854027E8E9FD0035D68F /* Reachability.swift in Sources */ = {isa = PBXBuildFile; fileRef = 217E853F27E8E9FD0035D68F /* Reachability.swift */; };
@@ -86,7 +85,6 @@
 		210F0ED027F18FC500F22E5D /* RequestManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestManager.swift; sourceTree = "<group>"; };
 		2115EFAE27F2D71E00204103 /* MovieDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieDetailViewController.swift; sourceTree = "<group>"; };
 		2115EFB027F2E17100204103 /* UtilityMethod.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UtilityMethod.swift; sourceTree = "<group>"; };
-		215F9B7F27E8CDE700ACC044 /* JailBreakChecker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JailBreakChecker.swift; sourceTree = "<group>"; };
 		215F9B8327E8D5E700ACC044 /* DeviceUtility.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceUtility.swift; sourceTree = "<group>"; };
 		217E853D27E8E9A50035D68F /* ConnectionManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConnectionManager.swift; sourceTree = "<group>"; };
 		217E853F27E8E9FD0035D68F /* Reachability.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Reachability.swift; sourceTree = "<group>"; };
@@ -242,7 +240,6 @@
 			isa = PBXGroup;
 			children = (
 				210ECD7927E5118500C0F799 /* Constants.swift */,
-				215F9B7F27E8CDE700ACC044 /* JailBreakChecker.swift */,
 				215F9B8327E8D5E700ACC044 /* DeviceUtility.swift */,
 				2115EFB027F2E17100204103 /* UtilityMethod.swift */,
 			);
@@ -621,7 +618,6 @@
 				210ECD7A27E5118500C0F799 /* Constants.swift in Sources */,
 				210ECD8727E6702B00C0F799 /* MoviesTableViewCell.swift in Sources */,
 				217E854027E8E9FD0035D68F /* Reachability.swift in Sources */,
-				215F9B8027E8CDE700ACC044 /* JailBreakChecker.swift in Sources */,
 				210ECD7827E5106100C0F799 /* ServiceRequestor.swift in Sources */,
 				210ECD3D27E340A300C0F799 /* SceneDelegate.swift in Sources */,
 				2115EFAF27F2D71E00204103 /* MovieDetailViewController.swift in Sources */,

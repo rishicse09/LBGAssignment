@@ -6,6 +6,9 @@
 //
 import UIKit
 private let moviesCellIdentifier = "moviesTableViewCell"
+private let movieListCellNibName = "MoviesTableViewCell"
+private let pullToRefreshTitle = "Pull to refresh"
+private let defaultCellHeight = 60.0
 
 class MoviesListViewController: UIViewController {
     private var arrMovies = [Movies]()
@@ -23,37 +26,32 @@ class MoviesListViewController: UIViewController {
         movieViewModel.delegate = self
     }
 
-    // MARK: - Business Logic
-    func fetchMovieListWithSearchString(searchString: String) {
-        movieViewModel.getMovieListWithSearchString(searchString: searchString)
-    }
-
     // MARK: - Event Handlers
     @IBAction private func getMovieListButtonTapped(_ sender: Any) {
-        fetchMovieListWithSearchString(searchString: Constants.MovieSearchString.validString)
+        movieViewModel.getMovieList(with: Constants.MovieSearchString.validString)
     }
 
     @IBAction private func getEmptyMovieListButtonTapped(_ sender: Any) {
-        fetchMovieListWithSearchString(searchString: Constants.MovieSearchString.invalidString)
+        movieViewModel.getMovieList(with: Constants.MovieSearchString.invalidString)
     }
 }
 
 extension MoviesListViewController: MoviesViewModelDelegate {
-
-    func didReceiveMoviesData(movies: [Movies]?, error: Error?) {
+    func didReceiveMoviesData(movies: [Movies]) {
+        weak var weakself = self
         defer {
             isRefreshing = false
         }
-        weak var weakself = self
-        guard let movieData = movies, movieData.count > 0 else {
-            DispatchQueue.main.async {
-                weakself?.showErrorAlertForMovieList(error: error)
-            }
-            return
-        }
-        arrMovies = movieData
+        arrMovies = movies
         DispatchQueue.main.async {
             weakself?.populateUIWithData()
+        }
+    }
+
+    func didFailWithError(error: Error) {
+        weak var weakself = self
+        DispatchQueue.main.async {
+            weakself?.showErrorAlertForMovieList(error: error)
         }
     }
 
@@ -82,7 +80,7 @@ extension MoviesListViewController: UITableViewDelegate, UITableViewDataSource {
     // MARK: - UI Components Define
    private func initialiseTableViewComponents() {
         moviesTableView.isHidden = true
-        moviesTableView.estimatedRowHeight = 60.0
+        moviesTableView.estimatedRowHeight = defaultCellHeight
         moviesTableView.rowHeight = UITableView.automaticDimension
         moviesTableView.tableFooterView = UIView(frame: .zero)
         registerNibs()
@@ -90,12 +88,12 @@ extension MoviesListViewController: UITableViewDelegate, UITableViewDataSource {
     }
 
     private func registerNibs() {
-        let moviesCellNib = UINib(nibName: "MoviesTableViewCell", bundle: nil)
+        let moviesCellNib = UINib(nibName: movieListCellNibName, bundle: nil)
         moviesTableView!.register(moviesCellNib, forCellReuseIdentifier: moviesCellIdentifier)
     }
 
     private func addRefreshControl() {
-        refreshControl.attributedTitle = NSAttributedString(string: "Pull to refresh")
+        refreshControl.attributedTitle = NSAttributedString(string: pullToRefreshTitle)
         refreshControl.addTarget(self, action: #selector(refreshMovieListData), for: .valueChanged)
         moviesTableView.addSubview(refreshControl)
     }
@@ -106,7 +104,7 @@ extension MoviesListViewController: UITableViewDelegate, UITableViewDataSource {
             return
         }
         isRefreshing = true
-        fetchMovieListWithSearchString(searchString: Constants.MovieSearchString.validString)
+        movieViewModel.getMovieList(with: Constants.MovieSearchString.validString)
         refreshControl.endRefreshing()
     }
 

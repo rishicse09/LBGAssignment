@@ -8,24 +8,25 @@
 import Foundation
 
 protocol MoviesViewModelDelegate {
-    func didReceiveMoviesData(movies: [Movies]?, error: Error?)
+    func didReceiveMoviesData(movies: [Movies])
+    func didFailWithError(error: Error)
 }
 
 struct MoviesViewModel {
     var delegate: MoviesViewModelDelegate?
 
-    func getMovieListWithSearchString(searchString: String) {
+    func getMovieList(with searchString: String) {
         Task {
             do {
                 let serviceRequest = ServiceRequestor()
                 let responseData = try await serviceRequest.getMoviesList(searchString: searchString, method: .getMovieList)
                 if let err = responseData.error {
-                    delegate?.didReceiveMoviesData(movies: nil, error: err)
+                    delegate?.didFailWithError(error: err)
                 } else {
                     if let movies = responseData.movieModelArray, movies.count > 0 {
-                        delegate?.didReceiveMoviesData(movies: movies, error: nil)
+                        delegate?.didReceiveMoviesData(movies: movies)
                     } else {
-                        delegate?.didReceiveMoviesData(movies: nil, error: CustomError.dataError)
+                        delegate?.didFailWithError(error: CustomError.dataError)
                     }
                 }
             } catch let serviceError {
