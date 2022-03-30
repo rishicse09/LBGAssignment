@@ -18,7 +18,7 @@ struct MoviesViewModel {
     func getMovieList(with searchString: String) {
         Task {
             do {
-                let serviceRequest = ServiceRequestor()
+                let serviceRequest = MovieListServiceRequestor()
                 let responseData = try await serviceRequest.getMoviesList(searchString: searchString, method: .getMovieList)
                 if let err = responseData.error {
                     delegate?.didFailWithError(error: err)

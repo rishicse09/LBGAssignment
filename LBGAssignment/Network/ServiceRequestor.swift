@@ -6,7 +6,8 @@
 //
 
 import Foundation
-struct ServiceRequestor {
+
+protocol MovieListServiceRequestorProtocol {
     /// This function is responsible for fetching movie list and returns a tuple of  optional Movies Model and  error
     ///
     /// ```
@@ -22,25 +23,8 @@ struct ServiceRequestor {
 
     func getMoviesList(searchString: String,
                        method: ServiceRequestMethod,
-                       requestType: DataRequestType? = nil,
-                       responseType: MockDataResponseType? = nil) async throws -> (movieModelArray: [Movies]?, error: Error?) {
-        var urlString = ServiceRequestUtility().getURLStringForMethod(method: method)
-        urlString = "\(urlString)\(searchString)"
-        guard let url = ServiceRequestUtility().getURLFromString(urlString: urlString) else {
-            return (nil, CustomError.unexpected)
-        }
-        var urlRequest = URLRequest(url: url)
-        urlRequest.httpMethod = "get"
-        do {
-            return try await fetchAndParseMovieData(urlRequest: urlRequest,
-                                                    requestType: requestType,
-                                                    responseType: responseType,
-                                                    method: method)
-        } catch let error {
-            debugPrint(error.localizedDescription)
-            throw CustomError.unexpected
-        }
-    }
+                       requestType: DataRequestType?,
+                       responseType: MockDataResponseType?) async throws -> (movieModelArray: [Movies]?, error: Error?)
 
     /// This function is responsible for fetching movie list and returns  a tuple of  optional Movies Model and error
     ///
@@ -55,13 +39,44 @@ struct ServiceRequestor {
     /// - Returns: A tuple of  optional Movies Model and optional error.
     ///
 
-    private func fetchAndParseMovieData(urlRequest: URLRequest,
-                                        requestType: DataRequestType? = nil,
-                                        responseType: MockDataResponseType? = nil,
-                                        method: ServiceRequestMethod? = nil) async throws -> (movieModelArray: [Movies]?, error: Error?) {
+    func fetchAndParseMovieData(urlRequest: URLRequest,
+                                requestType: DataRequestType?,
+                                responseType: MockDataResponseType?,
+                                method: ServiceRequestMethod?) async throws -> (movieModelArray: [Movies]?, error: Error?)
+
+}
+
+struct MovieListServiceRequestor: MovieListServiceRequestorProtocol {
+
+    func getMoviesList(searchString: String,
+                       method: ServiceRequestMethod,
+                       requestType: DataRequestType? = nil,
+                       responseType: MockDataResponseType? = nil) async throws -> (movieModelArray: [Movies]?, error: Error?) {
+        var urlString = ServiceRequestUtility().getURLStringForMethod(method: method)
+        urlString = "\(urlString)\(searchString)"
+        guard let url = ServiceRequestUtility().getURLFromString(urlString: urlString) else {
+            return (nil, CustomError.unexpected)
+        }
+        var urlRequest = URLRequest(url: url)
+        urlRequest.httpMethod = ApiRequestType.get.rawValue
+        do {
+            return try await fetchAndParseMovieData(urlRequest: urlRequest,
+                                                    requestType: requestType,
+                                                    responseType: responseType,
+                                                    method: method)
+        } catch let error {
+            debugPrint(error.localizedDescription)
+            throw CustomError.unexpected
+        }
+    }
+
+    func fetchAndParseMovieData(urlRequest: URLRequest,
+                                requestType: DataRequestType? = nil,
+                                responseType: MockDataResponseType? = nil,
+                                method: ServiceRequestMethod? = nil) async throws -> (movieModelArray: [Movies]?, error: Error?) {
         var moviesArray = [Movies]()
         do {
-            let response =  try await initiateServiceRequest(request: urlRequest,
+            let response =  try await NetworkLayer.initiateServiceRequest(request: urlRequest,
                                                              requestType: requestType,
                                                              responseType: responseType,
                                                              method: method)
@@ -78,7 +93,9 @@ struct ServiceRequestor {
         }
         return moviesArray.count > 0 ? (moviesArray, nil) : (nil, CustomError.dataError)
     }
+}
 
+struct NetworkLayer {
     /// This function is responsible to initialize network call with URLSession and returns a tuple of  optional Movies Model and optional error.
     /// ```
     /// initiateServiceRequest
@@ -91,10 +108,10 @@ struct ServiceRequestor {
     ///
     ///
 
-    private func  initiateServiceRequest(request: URLRequest,
-                                         requestType: DataRequestType? = nil,
-                                         responseType: MockDataResponseType? = nil,
-                                         method: ServiceRequestMethod? = nil) async throws -> (responseData: Data?, serviceError: Error?) {
+   static func initiateServiceRequest(request: URLRequest,
+                                      requestType: DataRequestType? = nil,
+                                      responseType: MockDataResponseType? = nil,
+                                      method: ServiceRequestMethod? = nil) async throws -> (responseData: Data?, serviceError: Error?) {
         if !ConnectionManager.hasConnectivity() {
             return (nil, CustomError.connectionFailed)
         }
@@ -128,8 +145,8 @@ struct ServiceRequestor {
     ///
     ///
 
-    private func getMockData(responseType: MockDataResponseType? = nil,
-                             method: ServiceRequestMethod? = nil) async throws -> (responseData: Data?, serviceError: Error?) {
+    private static func getMockData(responseType: MockDataResponseType? = nil,
+                                    method: ServiceRequestMethod? = nil) async throws -> (responseData: Data?, serviceError: Error?) {
         let mockDataRequestor = MockDataRequestor()
         if let data =  mockDataRequestor.getMockDataResponse(responseType: responseType, method: method) {
             debugPrint("got data")

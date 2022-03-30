@@ -11,6 +11,10 @@ enum ServiceRequestMethod: String {
     case  getMovieList = "get_movie_list"
 }
 
+enum ApiRequestType: String {
+    case get = "Get"
+}
+
 struct ServiceRequestUtility {
     func getURLStringForMethod(method: ServiceRequestMethod) -> String {
         switch method {

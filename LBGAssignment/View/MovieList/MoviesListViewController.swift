@@ -37,6 +37,8 @@ class MoviesListViewController: UIViewController {
 }
 
 extension MoviesListViewController: MoviesViewModelDelegate {
+    // MARK: - extension MoviesListViewController: MoviesViewModelDelegate
+
     func didReceiveMoviesData(movies: [Movies]) {
         weak var weakself = self
         defer {
@@ -77,7 +79,9 @@ extension MoviesListViewController: MoviesViewModelDelegate {
 }
 
 extension MoviesListViewController: UITableViewDelegate, UITableViewDataSource {
-    // MARK: - UI Components Define
+    // MARK: - extension MoviesListViewController: UITableViewDelegate, UITableViewDataSource
+
+    // MARK: Definng UI Components
    private func initialiseTableViewComponents() {
         moviesTableView.isHidden = true
         moviesTableView.estimatedRowHeight = defaultCellHeight
