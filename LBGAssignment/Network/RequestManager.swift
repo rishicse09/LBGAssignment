@@ -30,8 +30,3 @@ struct ServiceRequestUtility {
         return url
     }
 }
-
-enum DataRequestType: String {
-    case testData = "test_Data"
-    case actualData = "actual_Data"
-}

@@ -18,8 +18,6 @@ protocol MovieListServiceRequestorProtocol {
     /// - Parameter isMockRequest: - Fetch for mock data or real data
     /// - Parameter responseType: - Mock data response type, decides the nature of returned object in mock enviroment
     /// - Returns: A tuple of  optional Movies Model and optional error.
-    ///
-
     func getMoviesList(searchString: String,
                        method: ServiceRequestMethod,
                        isMockRequest: Bool?,
@@ -36,7 +34,6 @@ protocol MovieListServiceRequestorProtocol {
     /// - Parameter responseType: - Mock data response type, decides the nature of returned object in mock enviroment
     /// - Returns: A tuple of  optional Movies Model and optional error.
     ///
-
     func fetchAndParseMovieData(urlRequest: URLRequest,
                                 isMockRequest: Bool?,
                                 responseType: MockDataResponseType?,
@@ -90,7 +87,6 @@ struct MovieListServiceRequestor: MovieListServiceRequestorProtocol {
 }
 
 struct NetworkLayer {
-
     /// This function is responsible to initialize network call with URLSession and returns a tuple of  optional Movies Model and optional error.
     /// ```
     /// initiateServiceRequest
@@ -145,7 +141,6 @@ struct NetworkLayer {
     /// - Returns: A tuple of  optional Movies Model and optional error.
     ///
     ///
-
     private static func getMockData(responseType: MockDataResponseType? = nil,
                                     method: ServiceRequestMethod? = nil) async throws -> (responseData: Data?, serviceError: Error?) {
         let mockDataRequestor = MockDataRequestor()
