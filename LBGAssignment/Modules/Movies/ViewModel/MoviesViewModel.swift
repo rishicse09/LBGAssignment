@@ -7,26 +7,52 @@
 
 import Foundation
 
-protocol MoviesViewModelDelegate {
-    func didReceiveMoviesData(movies: [Movies])
-    func didFailWithError(error: Error)
+protocol MovieViewModelProtocol {
+    func getMovieList(with searchString: String) async
+    var reloadMovieList: (([Movies]) -> Void)? { get  set}
+    var showDataFetchError: ((Error) -> Void)? { get  set}
 }
 
-struct MoviesViewModel {
-    var delegate: MoviesViewModelDelegate?
+final class MoviesViewModel: MovieViewModelProtocol {
 
-    func getMovieList(with searchString: String) {
+    var reloadMovieList: (([Movies]) -> Void)?
+
+    var showDataFetchError: ((Error) -> Void)?
+
+    var dataFetchError: Error? {
+        didSet {
+            guard let _dataFetchError = dataFetchError else { return  }
+            showDataFetchError?(_dataFetchError)
+        }
+    }
+
+    var moviesData = [Movies]() {
+        didSet {
+            reloadMovieList?(moviesData)
+        }
+    }
+
+    private var serviceRequest: MovieListServiceRequestor
+
+    init(serviceRequest: MovieListServiceRequestor) {
+        self.serviceRequest = serviceRequest
+    }
+
+     func getMovieList(with searchString: String) {
         Task {
             do {
-                let serviceRequest = MovieListServiceRequestor()
                 let responseData = try await serviceRequest.getMoviesList(searchString: searchString, method: .getMovieList)
                 if let err = responseData.error {
-                    delegate?.didFailWithError(error: err)
+//                    delegate?.didFailWithError(error: err)
+                    dataFetchError = err
+
                 } else {
                     if let movies = responseData.movieModelArray, movies.count > 0 {
-                        delegate?.didReceiveMoviesData(movies: movies)
+//                        delegate?.didReceiveMoviesData(movies: movies)
+                        moviesData = movies
                     } else {
-                        delegate?.didFailWithError(error: CustomError.dataError)
+//                        delegate?.didFailWithError(error: CustomError.dataError)
+                        dataFetchError =  CustomError.dataError
                     }
                 }
             } catch let serviceError {

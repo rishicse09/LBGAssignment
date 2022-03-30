@@ -15,49 +15,31 @@ private struct MovieListPrivateContants {
 
 class MoviesListViewController: UIViewController {
     private var arrMovies: [Movies]?
-    private var movieViewModel = MoviesViewModel()
     private let refreshControl = UIRefreshControl()
     private var isRefreshing = false
     @IBOutlet weak private var optionsStackView: UIStackView!
     @IBOutlet weak private var moviesTableView: UITableView!
+
+    lazy var viewModel: MoviesViewModel = {
+        MoviesViewModel.init(serviceRequest: MovieListServiceRequestor())
+    }() as MoviesViewModel
 
     // MARK: - View Controller Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         initialiseTableViewComponents()
-        movieViewModel.delegate = self
+        didReceiveMoviesData()
+        movieListDidFailWithError()
     }
 
     // MARK: - Event Handlers
     @IBAction private func getMovieListButtonTapped(_ sender: Any) {
-        movieViewModel.getMovieList(with: Constants.MovieSearchString.validString)
+        viewModel.getMovieList(with: Constants.MovieSearchString.validString)
     }
 
     @IBAction private func getEmptyMovieListButtonTapped(_ sender: Any) {
-        movieViewModel.getMovieList(with: Constants.MovieSearchString.invalidString)
-    }
-}
-
-extension MoviesListViewController: MoviesViewModelDelegate {
-    // MARK: - extension MoviesListViewController: MoviesViewModelDelegate
-
-    func didReceiveMoviesData(movies: [Movies]) {
-        weak var weakself = self
-        defer {
-            isRefreshing = false
-        }
-        arrMovies = movies
-        DispatchQueue.main.async {
-            weakself?.populateUIWithData()
-        }
-    }
-
-    func didFailWithError(error: Error) {
-        weak var weakself = self
-        DispatchQueue.main.async {
-            weakself?.showErrorAlertForMovieList(error: error)
-        }
+        viewModel.getMovieList(with: Constants.MovieSearchString.invalidString)
     }
 
     private func populateUIWithData() {
@@ -65,6 +47,29 @@ extension MoviesListViewController: MoviesViewModelDelegate {
         optionsStackView.isHidden = true
         moviesTableView.isHidden = false
     }
+
+    // MARK: - View Model Call Backs
+    private func didReceiveMoviesData() {
+        // Reload TableView closure
+        viewModel.reloadMovieList = { [weak self] (movies) in
+            Task {[weak self] in
+                self?.arrMovies = movies
+                self?.populateUIWithData()
+            }
+        }
+    }
+
+    private func movieListDidFailWithError() {
+        // Show network error message
+        viewModel.showDataFetchError = { [weak self] error in
+            Task { [weak self] in
+                self?.showErrorAlertForMovieList(error: error)
+            }
+        }
+    }
+}
+
+extension MoviesListViewController {
 
     private func showErrorAlertForMovieList(error: Error?) {
         guard let err = error else { return }
@@ -111,7 +116,7 @@ extension MoviesListViewController: UITableViewDelegate, UITableViewDataSource {
             return
         }
         isRefreshing = true
-        movieViewModel.getMovieList(with: Constants.MovieSearchString.validString)
+        viewModel.getMovieList(with: Constants.MovieSearchString.validString)
         refreshControl.endRefreshing()
     }
 
