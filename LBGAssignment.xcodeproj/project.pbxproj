@@ -168,15 +168,13 @@
 		210ECD3927E340A300C0F799 /* LBGAssignment */ = {
 			isa = PBXGroup;
 			children = (
+				2115EFBB27F4AE1F00204103 /* Modules */,
 				2115EFB927F4AB1F00204103 /* ServiceRequestors */,
 				210F0EC827F187BE00F22E5D /* MockData */,
 				217E854827E903E60035D68F /* AlertHandler */,
 				217E854527E9036A0035D68F /* ErrorHandler */,
 				210ECD7127E4FE6300C0F799 /* Utility */,
 				210ECD7027E4FE5200C0F799 /* Network */,
-				210ECD6F27E4FE4C00C0F799 /* Model */,
-				210ECD6E27E4FE4600C0F799 /* View */,
-				210ECD6D27E4FE3C00C0F799 /* ViewModel */,
 				217E854C27EB320F0035D68F /* AppDelegate */,
 				217E854B27EB2BD10035D68F /* StoryBoards */,
 				210ECD4327E340A400C0F799 /* Assets.xcassets */,
@@ -291,6 +289,24 @@
 				210ECD7727E5106100C0F799 /* MovieListServiceRequestor.swift */,
 			);
 			path = ServiceRequestors;
+			sourceTree = "<group>";
+		};
+		2115EFBB27F4AE1F00204103 /* Modules */ = {
+			isa = PBXGroup;
+			children = (
+				2115EFBC27F4AE2F00204103 /* Movies */,
+			);
+			path = Modules;
+			sourceTree = "<group>";
+		};
+		2115EFBC27F4AE2F00204103 /* Movies */ = {
+			isa = PBXGroup;
+			children = (
+				210ECD6F27E4FE4C00C0F799 /* Model */,
+				210ECD6E27E4FE4600C0F799 /* View */,
+				210ECD6D27E4FE3C00C0F799 /* ViewModel */,
+			);
+			path = Movies;
 			sourceTree = "<group>";
 		};
 		217E854527E9036A0035D68F /* ErrorHandler */ = {
