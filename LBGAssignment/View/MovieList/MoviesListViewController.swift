@@ -5,14 +5,17 @@
 //  Created by RishiChaurasia on 20/03/22.
 //
 import UIKit
-private let moviesCellIdentifier = "moviesTableViewCell"
-private let movieListCellNibName = "MoviesTableViewCell"
-private let pullToRefreshTitle = "Pull to refresh"
-private let defaultCellHeight = 60.0
+
+private struct MovieListPrivateContants {
+    static let moviesCellIdentifier = "moviesTableViewCell"
+    static let movieListCellNibName = "MoviesTableViewCell"
+    static let pullToRefreshTitle = "Pull to refresh"
+    static let defaultCellHeight = 60.0
+}
 
 class MoviesListViewController: UIViewController {
-    private var arrMovies = [Movies]()
-    private var movieViewModel: MoviesViewModel = MoviesViewModel()
+    private var arrMovies: [Movies]?
+    private var movieViewModel: MoviesViewModel?
     private let refreshControl = UIRefreshControl()
     private var isRefreshing = false
     @IBOutlet weak private var optionsStackView: UIStackView!
@@ -23,16 +26,16 @@ class MoviesListViewController: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         initialiseTableViewComponents()
-        movieViewModel.delegate = self
+        movieViewModel?.delegate = self
     }
 
     // MARK: - Event Handlers
     @IBAction private func getMovieListButtonTapped(_ sender: Any) {
-        movieViewModel.getMovieList(with: Constants.MovieSearchString.validString)
+        movieViewModel?.getMovieList(with: Constants.MovieSearchString.validString)
     }
 
     @IBAction private func getEmptyMovieListButtonTapped(_ sender: Any) {
-        movieViewModel.getMovieList(with: Constants.MovieSearchString.invalidString)
+        movieViewModel?.getMovieList(with: Constants.MovieSearchString.invalidString)
     }
 }
 
@@ -84,7 +87,7 @@ extension MoviesListViewController: UITableViewDelegate, UITableViewDataSource {
     // MARK: Definng UI Components
    private func initialiseTableViewComponents() {
         moviesTableView.isHidden = true
-        moviesTableView.estimatedRowHeight = defaultCellHeight
+       moviesTableView.estimatedRowHeight = MovieListPrivateContants.defaultCellHeight
         moviesTableView.rowHeight = UITableView.automaticDimension
         moviesTableView.tableFooterView = UIView(frame: .zero)
         registerNibs()
@@ -92,12 +95,12 @@ extension MoviesListViewController: UITableViewDelegate, UITableViewDataSource {
     }
 
     private func registerNibs() {
-        let moviesCellNib = UINib(nibName: movieListCellNibName, bundle: nil)
-        moviesTableView!.register(moviesCellNib, forCellReuseIdentifier: moviesCellIdentifier)
+        let moviesCellNib = UINib(nibName: MovieListPrivateContants.movieListCellNibName, bundle: nil)
+        moviesTableView!.register(moviesCellNib, forCellReuseIdentifier: MovieListPrivateContants.moviesCellIdentifier)
     }
 
     private func addRefreshControl() {
-        refreshControl.attributedTitle = NSAttributedString(string: pullToRefreshTitle)
+        refreshControl.attributedTitle = NSAttributedString(string: MovieListPrivateContants.pullToRefreshTitle)
         refreshControl.addTarget(self, action: #selector(refreshMovieListData), for: .valueChanged)
         moviesTableView.addSubview(refreshControl)
     }
@@ -108,13 +111,13 @@ extension MoviesListViewController: UITableViewDelegate, UITableViewDataSource {
             return
         }
         isRefreshing = true
-        movieViewModel.getMovieList(with: Constants.MovieSearchString.validString)
+        movieViewModel?.getMovieList(with: Constants.MovieSearchString.validString)
         refreshControl.endRefreshing()
     }
 
     // MARK: - UITableViewDelegate
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return arrMovies.count
+        return arrMovies?.count ?? 0
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -123,18 +126,20 @@ extension MoviesListViewController: UITableViewDelegate, UITableViewDataSource {
 
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         if let detailViewController = UtilityMethod.getViewControllerInstanceForMainStoryBoard(viewControllerId: Constants.ViewControllerIdentifiers.movieDetailViewController) as? MovieDetailViewController {
-            let selectedMovie = arrMovies[indexPath.row]
-            detailViewController.movieDetail = selectedMovie
-            self.navigationController?.pushViewController(detailViewController, animated: true)
+            if let movies = arrMovies {
+                let selectedMovie = movies[indexPath.row]
+                detailViewController.movieDetail = selectedMovie
+                self.navigationController?.pushViewController(detailViewController, animated: true)
+            }
         }
     }
 
     // MARK: - Custom UI Creation
     private func createMoviesCell (_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let cell: MoviesTableViewCell = tableView.dequeueReusableCell(withIdentifier: moviesCellIdentifier, for: indexPath) as?  MoviesTableViewCell else {
+        guard let cell: MoviesTableViewCell = tableView.dequeueReusableCell(withIdentifier: MovieListPrivateContants.moviesCellIdentifier, for: indexPath) as?  MoviesTableViewCell, let movies = arrMovies else {
             return UITableViewCell()
         }
-        let movieData = arrMovies[indexPath.row]
+        let movieData = movies[indexPath.row]
         cell.setupData(movieData: movieData)
         return cell
     }
