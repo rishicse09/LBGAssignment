@@ -43,15 +43,11 @@ final class MoviesViewModel: MovieViewModelProtocol {
             do {
                 let responseData = try await serviceRequest.getMoviesList(searchString: searchString, method: .getMovieList)
                 if let err = responseData.error {
-//                    delegate?.didFailWithError(error: err)
                     dataFetchError = err
-
                 } else {
                     if let movies = responseData.movieModelArray, movies.count > 0 {
-//                        delegate?.didReceiveMoviesData(movies: movies)
                         moviesData = movies
                     } else {
-//                        delegate?.didFailWithError(error: CustomError.dataError)
                         dataFetchError =  CustomError.dataError
                     }
                 }
