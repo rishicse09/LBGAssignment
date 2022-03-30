@@ -42,7 +42,7 @@ class MoviesListViewController: UIViewController {
         viewModel.getMovieList(with: Constants.MovieSearchString.invalidString)
     }
 
-    private func populateUIWithData() {
+    private func updateUI() {
         moviesTableView.reloadData()
         optionsStackView.isHidden = true
         moviesTableView.isHidden = false
@@ -54,7 +54,7 @@ class MoviesListViewController: UIViewController {
         viewModel.reloadMovieList = { [weak self] (movies) in
             Task {[weak self] in
                 self?.arrMovies = movies
-                self?.populateUIWithData()
+                self?.updateUI()
             }
         }
     }
