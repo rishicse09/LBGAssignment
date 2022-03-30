@@ -21,7 +21,8 @@ watch the results in the right.
 Code is developed in Swift5 and build on Xcode 13.3
 Unit test and UI test covered using native XCTest and XCUITest. Coverage for all the added classes is more than ~80%
 
-![image](https://user-images.githubusercontent.com/61456703/160666124-1aa7b1cc-5822-469b-a169-ef9a91d8a1d4.png)
+![image](https://user-images.githubusercontent.com/61456703/160899126-bfefc834-c52f-4954-ac13-bb0d4d47bbe7.png)
+
 
 
 ## Dependency Management
