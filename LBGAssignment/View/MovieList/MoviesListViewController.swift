@@ -15,7 +15,7 @@ private struct MovieListPrivateContants {
 
 class MoviesListViewController: UIViewController {
     private var arrMovies: [Movies]?
-    private var movieViewModel: MoviesViewModel?
+    private var movieViewModel = MoviesViewModel()
     private let refreshControl = UIRefreshControl()
     private var isRefreshing = false
     @IBOutlet weak private var optionsStackView: UIStackView!
@@ -26,16 +26,16 @@ class MoviesListViewController: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         initialiseTableViewComponents()
-        movieViewModel?.delegate = self
+        movieViewModel.delegate = self
     }
 
     // MARK: - Event Handlers
     @IBAction private func getMovieListButtonTapped(_ sender: Any) {
-        movieViewModel?.getMovieList(with: Constants.MovieSearchString.validString)
+        movieViewModel.getMovieList(with: Constants.MovieSearchString.validString)
     }
 
     @IBAction private func getEmptyMovieListButtonTapped(_ sender: Any) {
-        movieViewModel?.getMovieList(with: Constants.MovieSearchString.invalidString)
+        movieViewModel.getMovieList(with: Constants.MovieSearchString.invalidString)
     }
 }
 
@@ -111,7 +111,7 @@ extension MoviesListViewController: UITableViewDelegate, UITableViewDataSource {
             return
         }
         isRefreshing = true
-        movieViewModel?.getMovieList(with: Constants.MovieSearchString.validString)
+        movieViewModel.getMovieList(with: Constants.MovieSearchString.validString)
         refreshControl.endRefreshing()
     }
 
