@@ -26,34 +26,41 @@ final class MoviesViewModel: MovieViewModelProtocol {
         }
     }
 
+    var moviesArray: [Movies]?
+
     var moviesData = [Movies]() {
         didSet {
             reloadMovieList?(moviesData)
         }
     }
 
-    private var serviceRequest: MovieListServiceRequestor
+    private var newMovieListServiceRequestor: MovieListServiceRequestProtocol
 
-    init(serviceRequest: MovieListServiceRequestor) {
-        self.serviceRequest = serviceRequest
+    init(newMovieListServiceRequestor: MovieListServiceRequestProtocol) {
+        self.newMovieListServiceRequestor = newMovieListServiceRequestor
     }
 
-     func getMovieList(with searchString: String) {
-        Task {
+    func getMovieList(with searchString: String) async {
+        let requestMapper = MovieRequestMapper.liveDataMovieList(searchString: searchString, apiType: .liveApi)
+        await fetchMovieList(with: requestMapper)
+    }
+
+    func fetchMovieList(with requestMapper: MovieRequestMapper) async {
+
             do {
-                let responseData = try await serviceRequest.getMoviesList(searchString: searchString, method: .getMovieList)
+                let responseData = try await newMovieListServiceRequestor.getMoviesList(apiRequest: requestMapper)
                 if let err = responseData.error {
                     dataFetchError = err
                 } else {
                     if let movies = responseData.movieModelArray, movies.count > 0 {
+                        moviesArray = movies
                         moviesData = movies
                     } else {
                         dataFetchError =  CustomError.dataError
                     }
                 }
             } catch let serviceError {
-                throw serviceError
+                dataFetchError =  serviceError
             }
-        }
     }
 }
