@@ -12,14 +12,10 @@ This repository is completely for learning purpose. Used Open API from itunes to
 - Autolayout
 
 
-This text you see here is *actually- written in Markdown! To get a feel
-for Markdown's syntax, type some text into the left window and
-watch the results in the right.
-
 ## Tech
 
 Code is developed in Swift5 and build on Xcode 13.3
-Unit test and UI test covered using native XCTest and XCUITest. Coverage for all the added classes is more than ~87%
+Unit test and UI test covered using native XCTest and XCUITest. Coverage for most of the added classes is more than ~87%
 
 ![image](https://user-images.githubusercontent.com/61456703/161032693-0612db3f-0b0b-44f9-bd22-16a64f8dd8ce.png)
 
