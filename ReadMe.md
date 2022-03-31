@@ -19,9 +19,10 @@ watch the results in the right.
 ## Tech
 
 Code is developed in Swift5 and build on Xcode 13.3
-Unit test and UI test covered using native XCTest and XCUITest. Coverage for all the added classes is more than ~80%
+Unit test and UI test covered using native XCTest and XCUITest. Coverage for all the added classes is more than ~87%
 
-![image](https://user-images.githubusercontent.com/61456703/160899126-bfefc834-c52f-4954-ac13-bb0d4d47bbe7.png)
+![image](https://user-images.githubusercontent.com/61456703/161032693-0612db3f-0b0b-44f9-bd22-16a64f8dd8ce.png)
+
 
 
 
