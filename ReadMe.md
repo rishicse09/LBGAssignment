@@ -14,7 +14,7 @@ This repository is completely for learning purpose. Used Open API from itunes to
 
 ## Tech
 
-Code is developed in Swift5 and build on Xcode 13.3
+Code is developed in Swift5.5, build on Xcode 13.3 executable on iOS 15
 Unit test and UI test covered using native XCTest and XCUITest. Coverage for most of the added classes is more than ~87%
 
 ![image](https://user-images.githubusercontent.com/61456703/161032693-0612db3f-0b0b-44f9-bd22-16a64f8dd8ce.png)
