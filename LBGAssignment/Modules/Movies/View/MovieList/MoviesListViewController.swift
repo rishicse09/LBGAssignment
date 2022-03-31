@@ -20,9 +20,9 @@ class MoviesListViewController: UIViewController {
     @IBOutlet weak private var optionsStackView: UIStackView!
     @IBOutlet weak private var moviesTableView: UITableView!
 
-    lazy var viewModel: MoviesViewModel = {
-        MoviesViewModel.init(serviceRequest: MovieListServiceRequestor())
-    }() as MoviesViewModel
+    lazy var viewModel: MovieViewModelProtocol = {
+        MoviesViewModel.init(newMovieListServiceRequestor: MovieListServiceRequestor())
+    }() as MovieViewModelProtocol
 
     // MARK: - View Controller Life Cycle
     override func viewDidLoad() {
@@ -35,11 +35,11 @@ class MoviesListViewController: UIViewController {
 
     // MARK: - Event Handlers
     @IBAction private func getMovieListButtonTapped(_ sender: Any) {
-        viewModel.getMovieList(with: Constants.MovieSearchString.validString)
+        fetchMovies(searchString: Constants.MovieSearchString.validString)
     }
 
     @IBAction private func getEmptyMovieListButtonTapped(_ sender: Any) {
-        viewModel.getMovieList(with: Constants.MovieSearchString.invalidString)
+        fetchMovies(searchString: Constants.MovieSearchString.invalidString)
     }
 
     private func updateUI() {
@@ -47,7 +47,9 @@ class MoviesListViewController: UIViewController {
         optionsStackView.isHidden = true
         moviesTableView.isHidden = false
     }
+}
 
+extension MoviesListViewController {
     // MARK: - View Model Call Backs
     private func didReceiveMoviesData() {
         // Reload TableView closure
@@ -65,6 +67,13 @@ class MoviesListViewController: UIViewController {
             Task { [weak self] in
                 self?.showErrorAlertForMovieList(error: error)
             }
+        }
+    }
+
+    private func fetchMovies(searchString: String) {
+        // Get news data from VM
+        Task { [weak self] in
+            await self?.viewModel.getMovieList(with: searchString)
         }
     }
 }
@@ -110,13 +119,13 @@ extension MoviesListViewController: UITableViewDelegate, UITableViewDataSource {
         moviesTableView.addSubview(refreshControl)
     }
 
-    @objc private func refreshMovieListData() {
+    @objc private func refreshMovieListData() async {
         if isRefreshing {
             refreshControl.endRefreshing()
             return
         }
         isRefreshing = true
-        viewModel.getMovieList(with: Constants.MovieSearchString.validString)
+        fetchMovies(searchString: Constants.MovieSearchString.validString)
         refreshControl.endRefreshing()
     }
 

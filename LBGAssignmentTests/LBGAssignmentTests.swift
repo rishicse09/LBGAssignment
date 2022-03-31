@@ -10,51 +10,51 @@ import XCTest
 
 class LBGAssignmentTests: XCTestCase {
 
+    var testSut: MoviesViewModel!
+
     override func setUpWithError() throws {
         // Put setup code here. This method is called before the invocation of each test method in the class.
+        let mockDataServiceRequestor = MockDataServiceRequestor()
+        testSut = MoviesViewModel.init(newMovieListServiceRequestor: mockDataServiceRequestor)
     }
     override func tearDownWithError() throws {
         // Put teardown code here. This method is called after the invocation of each test method in the class.
     }
 
-    func testForMovieApiResultsWithCorrectURL() async throws {
-        let result =  try await MovieListServiceRequestor().getMoviesList(searchString: Constants.MovieSearchString.validString, method: .getMovieList, isMockRequest: true, responseType: .successWithResult)
-        guard let movies = result.movieModelArray else {
-            XCTAssertFalse(1==2, "Test case failed to fetch data with correct URL")
-            return
+    func testFullListForMockData() {
+        let expect = expectation(description: "API success")
+        let requestMapper = MovieRequestMapper.mockDataMovieList(searchString: Constants.MovieSearchString.validString, apiType: .mockApi)
+        Task {
+            await testSut.fetchMovieList(with: requestMapper)
+            expect.fulfill()
         }
-        XCTAssertTrue(movies.count > 0, "Data recieved successfully")
-    }
-    func testForMovieApiEmptyResultsWithCorrectURL() async throws {
-        let result =  try await MovieListServiceRequestor().getMoviesList(
-            searchString: Constants.MovieSearchString.invalidString,
-            method: .getMovieList,
-            isMockRequest: true,
-            responseType: .successWithEmptyResult)
-        guard let movies = result.movieModelArray else {
-            XCTAssertFalse(1==2, "Test case failed to fetch data with correct URL")
-            return
+        waitForExpectations(timeout: 20)
+        XCTAssertTrue(testSut.moviesArray!.count > 0, "test passed")
+        for movie in testSut.moviesArray! {
+            XCTAssertNotNil(movie.artistName, "movie data is not nil")
         }
-        XCTAssertTrue(movies.count > 0, "Data recieved successfully")
     }
-    func testForMovieApiResultsWithInCorrectURL() async throws {
-        let response =   try await MovieListServiceRequestor().getMoviesList(
-            searchString: Constants.MovieSearchString.invalidString,
-            method: .getMovieList,
-            isMockRequest: true,
-            responseType: .failedWithError)
-        guard let error = response.error else {
-            XCTAssertFalse(1==2, "Test case failed to throw error with incorrect URL")
-            return
+
+    func testEmptylListForMockData() {
+        let expect = expectation(description: "API Empty Result")
+        let requestMapper = MovieRequestMapper.mockDataMovieList(searchString: Constants.MovieSearchString.invalidString, apiType: .mockApi)
+        Task {
+            await testSut.fetchMovieList(with: requestMapper)
+            expect.fulfill()
         }
-        XCTAssertNotNil(error, "Service failed and error received")
+        waitForExpectations(timeout: 20)
+        XCTAssertNil(testSut.moviesArray, "Movie array not initialised as no data received")
     }
-    private func getURLRequestForURL(urlString: String) -> URLRequest? {
-        guard let url = URL(string: urlString) else {
-            XCTAssertFalse(1==2, "URL String cant be converted into url")
-            return nil
+
+    func testInvalidCaseForMockData() {
+        let expect = expectation(description: "API Empty Error")
+        let requestMapper = MovieRequestMapper.mockDataMovieList(searchString: Constants.MovieSearchString.validString, apiType: .liveApi)
+        Task {
+            await testSut.fetchMovieList(with: requestMapper)
+            expect.fulfill()
         }
-        let urlRequest = URLRequest(url: url)
-        return urlRequest
+        waitForExpectations(timeout: 20)
+        XCTAssertNil(testSut.moviesArray, "Movie array not initialised as no data received")
     }
+    
 }

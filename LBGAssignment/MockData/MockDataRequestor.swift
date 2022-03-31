@@ -14,7 +14,26 @@ enum MockDataResponseType: String {
     case unknown = "unknown_type"
 }
 
-struct MockDataFiles {
+extension SetUpApiRequestProtocol {
+    func getMockDataResponseType(searchString: String, apiType: ApiType) -> MockDataResponseType {
+        switch apiType {
+        case .mockApi:
+            if searchString.caseInsensitiveCompare(Constants.MovieSearchString.validString) == .orderedSame {
+                return .successWithResult
+            } else if searchString.caseInsensitiveCompare(Constants.MovieSearchString.invalidString) == .orderedSame {
+                return .successWithEmptyResult
+            } else {
+                return .failedWithError
+            }
+        case .liveApi:
+            return .failedWithError
+        case .invalidApi:
+            return .failedWithError
+        }
+    }
+}
+
+private struct MockDataFiles {
     static let movieListFull = "MockMovieList_Full"
     static let movieListEmpty = "MockMovieList_Empty"
 }
@@ -23,14 +42,46 @@ protocol MockDataRequestorProtocol {
     func getMockDataResponse(responseType: MockDataResponseType?, method: ServiceRequestMethod?) -> Data?
 }
 
-class MockDataRequestor: MockDataRequestorProtocol {
-
-    func getMockDataResponse(responseType: MockDataResponseType?, method: ServiceRequestMethod?) -> Data? {
-        guard let responseType = responseType, let method = method else { return nil }
+struct MockDataServiceRequestor: MovieListServiceRequestProtocol {
+    func getMoviesList(apiRequest: SetUpApiRequestProtocol) async throws -> (movieModelArray: [Movies]?, error: Error?) {
+        let responseType = apiRequest.getMockDataResponseType(searchString: apiRequest.searchString ?? "", apiType: apiRequest.apiType)
+        let method = apiRequest.apiMethod
         switch method {
         case .getMovieList:
             debugPrint("movie list")
-            return getMockDataResponseMovies(responseType: responseType)
+            guard let mockData = getMockDataResponseMovies(responseType: responseType) else {
+                return (nil, CustomError.unexpected)
+            }
+            do {
+                let mockMoviesData = try await parseMockData(resultType: MovieResponse.self, mockData: mockData, apiRequest: apiRequest)
+                guard let responseData = mockMoviesData.responseData else {
+                    return (nil, mockMoviesData.serviceError)
+                }
+                var moviesArray = [Movies]()
+                for movie in responseData.results {
+                    moviesArray.append(movie)
+                }
+                return (moviesArray, nil)
+            } catch let error {
+                debugPrint(error.localizedDescription)
+                return (nil, CustomError.unexpected)
+            }
+        }
+    }
+
+    private func parseMockData<T: Decodable>(resultType: T.Type,
+                                             mockData: Data,
+                                             apiRequest: SetUpApiRequestProtocol
+    ) async throws -> (responseData: T?, serviceError: Error?) {
+        if !ConnectionManager.hasConnectivity() {
+            return (nil, CustomError.connectionFailed)
+        }
+        do {
+            let results  =  try JSONDecoder().decode(T.self, from: mockData)
+            return (results, nil)
+        } catch let error {
+            debugPrint(error.localizedDescription)
+            return (nil, CustomError.unexpected)
         }
     }
 
@@ -66,6 +117,7 @@ class MockDataRequestor: MockDataRequestorProtocol {
             }
         } catch {
             print(error)
+            return nil
         }
         return nil
     }
