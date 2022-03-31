@@ -119,7 +119,7 @@ extension MoviesListViewController: UITableViewDelegate, UITableViewDataSource {
         moviesTableView.addSubview(refreshControl)
     }
 
-    @objc private func refreshMovieListData() async {
+    @objc private func refreshMovieListData() {
         if isRefreshing {
             refreshControl.endRefreshing()
             return
